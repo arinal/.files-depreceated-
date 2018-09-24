@@ -1,0 +1,6 @@
+[submodule "zprezto"]
+	path = zprezto
+	url = https://github.com/arinal/prezto.git
+[submodule "hammerspoon"]
+	path = hammerspoon
+	url = https://github.com/arinal/awesome-hammerspoon.git
