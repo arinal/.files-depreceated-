@@ -1,12 +1,11 @@
 # .files
-Clone recursively to include all dependent repositories.
+Clone this repository recursively to include all dependent repositories.
 ```bash
 git clone --recursive https://github.com/arinal/.files
 ```
 
-
 ## Install list
-- zsh
+- [zsh](https://www.zsh.org/)
 - [tmux](https://github.com/tmux/tmux/wiki)
 - [powerline](https://github.com/powerline/powerline)
 - [powerline fonts](https://github.com/powerline/fonts/blob/master/README.rst#L7)
