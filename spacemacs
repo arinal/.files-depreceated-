@@ -35,7 +35,8 @@
      ruby
      lua
      )
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(groovy-mode
+                                      remember)
    dotspacemacs-frozen-packages '()
    dotspacemacs-excluded-packages '()
    dotspacemacs-install-packages 'used-only))
@@ -110,6 +111,16 @@
   )
 
 (defun dotspacemacs/user-config ()
+  ;; (setq org-agenda-files (list "path/to/TODO.org"))
+  ;; (setq ensime-sem-high-enabled-p nil)
+  ;; (setq gud-pdb-command-name "python -m pdb")
+
+  (setq-default browse-url-browser-function 'browse-url-generic
+                browse-url-generic-program "chromium")
+
+  ;; (setq eclim-eclipse-dirs "/home/arinal/Downloads/apps/eclipse/plugins/org.eclim_2.8.0/bin"
+  ;;       eclim-executable "/home/arinal/Downloads/apps/eclipse/plugins/org.eclim_2.8.0/bin/eclim")
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
