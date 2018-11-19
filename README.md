@@ -10,10 +10,20 @@ git clone --recursive https://github.com/arinal/.files
 - [powerline](https://github.com/powerline/powerline)
 - [powerline fonts](https://github.com/powerline/fonts/blob/master/README.rst#L7)
 - [powerline-shell](https://github.com/b-ryan/powerline-shell)
-- [iTerm2-Color-Schemes](https://github.com/mbadolato/iTerm2-Color-Schemes)
 - [spacemacs](https://github.com/syl20bnr/spacemacs)
 - [prezto](https://github.com/sorin-ionescu/prezto)
+- [vimium](https://github.com/philc/vimium)
+
+## For macOS
+- [iTerm2-Color-Schemes](https://github.com/mbadolato/iTerm2-Color-Schemes)
 - [hammerspoon](http://www.hammerspoon.org/)
+
+## Linux
+- [i3wm](https://github.com/i3/i3)
 
 ## Good to have
 - [CLI: improved](https://remysharp.com/2018/08/23/cli-improved#fzf--ctrlr) 
+
+For faster terminal, especially if you are using iTerm2, these are better alternatives for faster rendering:
+- [alacritty](https://github.com/jwilm/alacritty)
+- [kitty](https://github.com/kovidgoyal/kitty)

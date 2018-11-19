@@ -1,0 +1,7 @@
+[core]
+	excludesfile = ~/.gitignore
+	editor = vim
+
+[user]
+	email = dicky.arinal@gmail.com
+	name = arinal
