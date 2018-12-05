@@ -14,7 +14,7 @@
      syntax-checking
      version-control
      tmux
-     osx
+     ;; osx
 
      html
      yaml
@@ -117,6 +117,38 @@
    ))
 
 (defun dotspacemacs/user-init ()
+  (add-hook 'evil-insert-state-entry-hook (lambda () (send-string-to-terminal "\033[5 q")))
+  (add-hook 'evil-normal-state-entry-hook (lambda () (send-string-to-terminal "\033[0 q")))
+
+  (defun copy-to-clipboard ()
+    "Copies selection to x-clipboard."
+    (interactive)
+    (if (display-graphic-p)
+        (progn
+          (message "Yanked region to x-clipboard!")
+          (call-interactively 'clipboard-kill-ring-save)
+          )
+      (if (region-active-p)
+          (progn
+            (shell-command-on-region (region-beginning) (region-end) "xsel -i -b")
+            (message "Yanked region to clipboard!")
+            (deactivate-mark))
+        (message "No region active; can't yank to clipboard!")))
+    )
+
+  (defun paste-from-clipboard ()
+    "Pastes from x-clipboard."
+    (interactive)
+    (if (display-graphic-p)
+        (progn
+          (clipboard-yank)
+          (message "graphics active")
+          )
+      (insert (shell-command-to-string "xsel -o -b"))
+      )
+    )
+  (evil-leader/set-key "o y" 'copy-to-clipboard)
+  (evil-leader/set-key "o p" 'paste-from-clipboard)
   )
 
 (defun dotspacemacs/user-config ()
@@ -125,10 +157,8 @@
   ;; (setq org-agenda-files (list "path/to/TODO.org"))
   ;; (setq ensime-sem-high-enabled-p nil)
   ;; (setq gud-pdb-command-name "python -m pdb")
-
-  ;; (setq-default browse-url-browser-function 'browse-url-generic
-  ;;               browse-url-generic-program "chromium")
-
+  (setq-default browse-url-browser-function 'browse-url-generic
+                browse-url-generic-program "google-chrome-stable")
   ;; (setq eclim-eclipse-dirs "/path/to/eclipse/plugins/org.eclim_2.8.0/bin"
   ;;       eclim-executable "/path/to/eclipse/plugins/org.eclim_2.8.0/bin/eclim")
   )

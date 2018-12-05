@@ -10,8 +10,11 @@ git clone --recursive https://github.com/arinal/.files
 - [powerline](https://github.com/powerline/powerline)
 - [powerline fonts](https://github.com/powerline/fonts/blob/master/README.rst#L7)
 - [powerline-shell](https://github.com/b-ryan/powerline-shell)
-- [spacemacs](https://github.com/syl20bnr/spacemacs)
 - [prezto](https://github.com/sorin-ionescu/prezto)
+- [ranger](https://github.com/ranger/ranger)
+- [qutebrowser](https://github.com/qutebrowser/qutebrowser)
+- [spacemacs](https://github.com/syl20bnr/spacemacs)
+- [neovim](https://github.com/neovim/neovim)
 - [vimium](https://github.com/philc/vimium)
 
 ## For macOS
@@ -19,7 +22,13 @@ git clone --recursive https://github.com/arinal/.files
 - [hammerspoon](http://www.hammerspoon.org/)
 
 ## Linux
+### i3 Window Manager
 - [i3wm](https://github.com/i3/i3)
+- [rofi](https://github.com/DaveDavenport/rofi)
+- [polybar](https://github.com/jaagr/polybar)
+- [compton](https://github.com/chjj/compton)
+
+- [w3m](http://w3m.sourceforge.net)
 
 ## Good to have
 - [CLI: improved](https://remysharp.com/2018/08/23/cli-improved#fzf--ctrlr) 
