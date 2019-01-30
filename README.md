@@ -28,6 +28,7 @@ i3 Window Manager
 - [polybar](https://github.com/jaagr/polybar)
 - [compton](https://github.com/chjj/compton)
 
+Image preview for ranger
 - [w3m](http://w3m.sourceforge.net)
 
 ## Good to have
