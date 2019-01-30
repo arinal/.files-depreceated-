@@ -22,7 +22,7 @@ git clone --recursive https://github.com/arinal/.files
 - [hammerspoon](http://www.hammerspoon.org/)
 
 ## Linux
-### i3 Window Manager
+i3 Window Manager
 - [i3wm](https://github.com/i3/i3)
 - [rofi](https://github.com/DaveDavenport/rofi)
 - [polybar](https://github.com/jaagr/polybar)

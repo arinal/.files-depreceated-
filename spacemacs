@@ -117,43 +117,32 @@
    ))
 
 (defun dotspacemacs/user-init ()
+  (defun on-after-init ()
+    (unless (display-graphic-p (selected-frame))
+      (set-face-background 'default "unspecified-bg" (selected-frame))))
+  (add-hook 'window-setup-hook 'on-after-init)
+
   (add-hook 'evil-insert-state-entry-hook (lambda () (send-string-to-terminal "\033[5 q")))
   (add-hook 'evil-normal-state-entry-hook (lambda () (send-string-to-terminal "\033[0 q")))
 
-  (defun copy-to-clipboard ()
-    "Copies selection to x-clipboard."
-    (interactive)
-    (if (display-graphic-p)
-        (progn
-          (message "Yanked region to x-clipboard!")
-          (call-interactively 'clipboard-kill-ring-save)
-          )
-      (if (region-active-p)
-          (progn
-            (shell-command-on-region (region-beginning) (region-end) "xsel -i -b")
-            (message "Yanked region to clipboard!")
-            (deactivate-mark))
-        (message "No region active; can't yank to clipboard!")))
-    )
-
-  (defun paste-from-clipboard ()
-    "Pastes from x-clipboard."
-    (interactive)
-    (if (display-graphic-p)
-        (progn
-          (clipboard-yank)
-          (message "graphics active")
-          )
-      (insert (shell-command-to-string "xsel -o -b"))
-      )
-    )
-  (evil-leader/set-key "o y" 'copy-to-clipboard)
-  (evil-leader/set-key "o p" 'paste-from-clipboard)
+  (unless window-system
+    (when (getenv "DISPLAY")
+      (defun xclip-cut-function (text &optional push)
+        (with-temp-buffer
+          (insert text)
+          (call-process-region (point-min) (point-max) "xclip" nil 0 nil "-i" "-selection" "clipboard")))
+      (defun xclip-paste-function()
+        (let ((xclip-output (shell-command-to-string "xclip -o -selection clipboard")))
+          (unless (string= (car kill-ring) xclip-output)
+            xclip-output )))
+      (setq interprogram-cut-function 'xclip-cut-function)
+      (setq interprogram-paste-function 'xclip-paste-function)
+      ))
   )
 
 (defun dotspacemacs/user-config ()
   (setq asm-comment-char ?#)
-  ;; (setq x86-lookup-pdf "/Users/dickyarinal/Dropbox/Public/books/x86-64-instruction-set-ref.pdf")
+  (setq x86-lookup-pdf "/Users/dickyarinal/Dropbox/Public/books/x86-64-instruction-set-ref.pdf")
   ;; (setq org-agenda-files (list "path/to/TODO.org"))
   ;; (setq ensime-sem-high-enabled-p nil)
   ;; (setq gud-pdb-command-name "python -m pdb")
