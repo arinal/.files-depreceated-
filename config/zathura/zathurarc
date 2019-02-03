@@ -1,1 +1,8 @@
+map H scroll   left
+map L scroll   right
+map j navigate next
+map k navigate previous
+map h scroll   page-top
+map l scroll   page-bottom
+
 set selection-clipboard clipboard
