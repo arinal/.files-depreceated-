@@ -5,3 +5,6 @@ ensime.sbt
 .idea/
 TAGS
 .sbt-hydra-history
+
+.bloop
+.metals
