@@ -11,7 +11,7 @@
    '(
      ;; spell-checking
      ;; version-control
-     ;; osx
+     osx
      auto-completion
      better-defaults
      git
@@ -22,11 +22,15 @@
      tmux
      themes-megapack
 
+     themes-megapack
+
      org
-     google-calendar
+     ;; google-calendar
 
      markdown
      emacs-lisp
+     yaml
+     lua
      lsp
      scala-lsp
      (java :variables java-backend 'lsp)
@@ -38,6 +42,10 @@
    dotspacemacs-install-packages 'used-only))
 
 (defun dotspacemacs/init ()
+  "Initialization:
+This function is called at the very beginning of Spacemacs startup,
+before layer configuration.
+It should only modify the values of Spacemacs settings."
   (setq-default
    dotspacemacs-enable-emacs-pdumper nil
    dotspacemacs-emacs-pdumper-executable-file "emacs-27.0.50"
@@ -57,7 +65,8 @@
    dotspacemacs-startup-buffer-responsive t
    dotspacemacs-scratch-mode 'text-mode
    dotspacemacs-initial-scratch-message nil
-   dotspacemacs-themes '(spacemacs-dark
+   dotspacemacs-themes '(majapahit-dark
+                         spacemacs-dark
                          spacemacs-light)
    dotspacemacs-mode-line-theme '(vim-powerline :separator wave :separator-scale 1.5)
    dotspacemacs-colorize-cursor-according-to-state t
@@ -78,7 +87,6 @@
    dotspacemacs-auto-generate-layout-names nil
    dotspacemacs-large-file-size 1
    dotspacemacs-auto-save-file-location nil
-   ;; dotspacemacs-max-rollback-slots 5
    dotspacemacs-enable-paste-transient-state nil
    dotspacemacs-which-key-delay 0.3
    dotspacemacs-which-key-position 'bottom
@@ -89,8 +97,6 @@
    dotspacemacs-fullscreen-use-non-native nil
    dotspacemacs-maximized-at-startup nil
    dotspacemacs-undecorated-at-startup nil
-   ;; dotspacemacs-active-transparency 90
-   ;; dotspacemacs-inactive-transparency 90
    dotspacemacs-show-transient-state-title t
    dotspacemacs-show-transient-state-color-guide t
    dotspacemacs-mode-line-unicode-symbols t
@@ -114,24 +120,30 @@
 (defun dotspacemacs/user-env () (spacemacs/load-spacemacs-env))
 
 (defun dotspacemacs/user-init ()
+  ;; (add-hook 'evil-insert-state-entry-hook (lambda () (send-string-to-terminal "\033[5 q")))
+  ;; (add-hook 'evil-normal-state-entry-hook (lambda () (send-string-to-terminal "\033[0 q")))
+
+  ;; (unless window-system
+  ;;   (when (getenv "DISPLAY")
+  ;;     (defun xclip-cut-function (text &optional push)
+  ;;       (with-temp-buffer
+  ;;         (insert text)
+  ;;         (call-process-region (point-min) (point-max) "xclip" nil 0 nil "-i" "-selection" "clipboard")))
+  ;;     (defun xclip-paste-function()
+  ;;       (let ((xclip-output (shell-command-to-string "xclip -o -selection clipboard")))
+  ;;         (unless (string= (car kill-ring) xclip-output)
+  ;;           xclip-output )))
+
+  ;;     (setq interprogram-cut-function 'xclip-cut-function)
+  ;;     (setq interprogram-paste-function 'xclip-paste-function)
+  ;;     ))
+
+  ;; (defun on-after-init ()
+  ;;   (unless (display-graphic-p (selected-frame))
+  ;;     (set-face-background 'default "unspecified-bg" (selected-frame))))
+  ;; (add-hook 'window-setup-hook 'on-after-init)
   (add-hook 'evil-insert-state-entry-hook (lambda () (send-string-to-terminal "\033[5 q")))
   (add-hook 'evil-normal-state-entry-hook (lambda () (send-string-to-terminal "\033[0 q")))
-
-  (unless window-system
-    (when (getenv "DISPLAY")
-      (defun xclip-cut-function (text &optional push)
-        (with-temp-buffer
-          (insert text)
-          (call-process-region (point-min) (point-max) "xclip" nil 0 nil "-i" "-selection" "clipboard")))
-      (defun xclip-paste-function()
-        (let ((xclip-output (shell-command-to-string "xclip -o -selection clipboard")))
-          (unless (string= (car kill-ring) xclip-output)
-            xclip-output )))
-
-      (setq interprogram-cut-function 'xclip-cut-function)
-      (setq interprogram-paste-function 'xclip-paste-function)
-      ))
-
   (setq-default dotspacemacs-themes '(majapahit-dark
                                       spacemacs-dark
                                       spacemacs-light))
@@ -142,10 +154,10 @@
 (defun dotspacemacs/user-config ()
   (setq asm-comment-char ?#)
   (setq x86-lookup-pdf "/Users/dickyarinal/Dropbox/Public/books/x86-64-instruction-set-ref.pdf")
-  (setq-default browse-url-browser-function 'browse-url-generic
-                browse-url-generic-program "google-chrome-stable")
+  ;; (setq-default browse-url-browser-function 'browse-url-generic
+  ;;               browse-url-generic-program "google-chrome-stable")
 
-  (setq org-agenda-files (list "/home/archinal/Dropbox/Documents/orgs/TODO.org"))
+  (setq org-agenda-files (list "/Users/dickyarinal/Dropbox/Documents/orgs/TODO.org"))
   ;; (setq org-gcal-client-id "362941279662-pf44rj6oi26acrnf3goe6985a7k16vbl.apps.googleusercontent.com"
   ;;       org-gcal-client-secret "LetMs8T0NJtX7GvIGQnDEDD4")
   ;; (setq org-gcal-file-alist '(("dicky.arinal@gmail.com" . "/home/archinal/Dropbox/Documents/orgs/TODOist.org")))
@@ -153,6 +165,11 @@
   ;; (setq '(org-capture-templates
   ;;         ("t" "Todo" entry (file+headline "/home/archinal/Dropbox/Documents/orgs/TODO.org")
   ;;          "* TODO %?\n  %i\n  %a")))
+
+  ;; (setq ensime-sem-high-enabled-p nil)
+  ;; (setq gud-pdb-command-name "python -m pdb")
+  ;; (setq-default browse-url-browser-function 'browse-url-generic
+  ;;               browse-url-generic-program "chrome")
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -169,7 +186,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("5a21604c4b1f2df98e67cda2347b8f42dc9ce471a48164fcb8d3d52c3a0d10be" "3a5f04a517096b08b08ef39db6d12bd55c04ed3d43b344cf8bd855bde6d3a1ae" default)))
+    ("5a21604c4b1f2df98e67cda2347b8f42dc9ce471a48164fcb8d3d52c3a0d10be" "3a5f04a517096b08b08ef39db6d12bd55c04ed3d43b344cf8bd855bde6d3a1ae" "c7f10959cb1bc7a36ee355c765a1768d48929ec55dde137da51077ac7f899521" "54f2d1fcc9bcadedd50398697618f7c34aceb9966a6cbaa99829eb64c0c1f3ca" "88049c35e4a6cedd4437ff6b093230b687d8a1fb65408ef17bfcf9b7338734f6" "bd7b7c5df1174796deefce5debc2d976b264585d51852c962362be83932873d9" "37ba833442e0c5155a46df21446cadbe623440ccb6bbd61382eb869a2b9e9bf9" default)))
  '(evil-want-Y-yank-to-eol nil)
  '(hl-todo-keyword-faces
    (quote
@@ -191,8 +208,7 @@ This function is called at the very end of Spacemacs initialization."
      ("???" . "#dc752f"))))
  '(package-selected-packages
    (quote
-    (zenburn-theme zen-and-art-theme white-sand-theme underwater-theme ujelly-theme twilight-theme twilight-bright-theme twilight-anti-bright-theme toxi-theme tao-theme tangotango-theme tango-plus-theme tango-2-theme sunny-day-theme sublime-themes subatomic256-theme subatomic-theme spacegray-theme soothe-theme solarized-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme seti-theme reverse-theme rebecca-theme railscasts-theme purple-haze-theme professional-theme planet-theme phoenix-dark-pink-theme phoenix-dark-mono-theme organic-green-theme omtose-phellack-theme oldlace-theme occidental-theme obsidian-theme noctilux-theme naquadah-theme mustang-theme monokai-theme monochrome-theme molokai-theme moe-theme minimal-theme material-theme majapahit-theme madhat2r-theme lush-theme light-soap-theme kaolin-themes jbeans-theme jazz-theme ir-black-theme inkpot-theme heroku-theme hemisu-theme hc-zenburn-theme gruvbox-theme gruber-darker-theme grandshell-theme gotham-theme gandalf-theme flatui-theme flatland-theme farmhouse-theme eziam-theme exotica-theme espresso-theme dracula-theme doom-themes django-theme darktooth-theme autothemer darkokai-theme darkmine-theme darkburn-theme dakrone-theme cyberpunk-theme color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized clues-theme cherry-blossom-theme busybee-theme bubbleberry-theme birds-of-paradise-plus-theme badwolf-theme apropospriate-theme anti-zenburn-theme ample-zen-theme ample-theme alect-themes afternoon-theme calfw-org org-gcal request-deferred deferred calfw mvn meghanada maven-test-mode lsp-java groovy-mode groovy-imports pcache gradle-mode ensime company-emacs-eclim eclim scala-mode noflet lsp-scala sbt-mode lsp-ui lsp-treemacs helm-lsp company-lsp lsp-mode dash-functional smeargle orgit magit-svn magit-gitflow magit-popup helm-gitignore helm-git-grep gitignore-templates gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link evil-magit magit transient git-commit with-editor yasnippet-snippets unfill org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download org-cliplink org-brain mwim mmm-mode markdown-toc markdown-mode htmlize helm-org-rifle helm-company helm-c-yasnippet gnuplot gh-md fuzzy flycheck-pos-tip pos-tip evil-org company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete ws-butler writeroom-mode visual-fill-column winum volatile-highlights vi-tilde-fringe uuidgen treemacs-projectile treemacs-evil treemacs ht pfuture toc-org symon symbol-overlay string-inflection spaceline-all-the-icons spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode password-generator paradox spinner overseer org-bullets open-junk-file nameless move-text macrostep lorem-ipsum link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-xref helm-themes helm-swoop helm-purpose window-purpose imenu-list helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flycheck-package package-lint flycheck flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state iedit evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens smartparens paredit evil-args evil-anzu anzu eval-sexp-fu elisp-slime-nav editorconfig dumb-jump doom-modeline shrink-path all-the-icons memoize f dash s devdocs define-word counsel-projectile projectile counsel swiper ivy pkg-info epl column-enforce-mode clean-aindent-mode centered-cursor-mode auto-highlight-symbol auto-compile packed aggressive-indent ace-window ace-link ace-jump-helm-line helm avy helm-core popup which-key use-package pcre2el org-plus-contrib hydra lv font-lock+ evil goto-chg undo-tree dotenv-mode diminish bind-map bind-key async)))
- '(pdf-view-midnight-colors (quote ("#5f5f87" . "#ffffff"))))
+    ())))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

@@ -3,8 +3,12 @@ env:
 
 window:
   dimensions:
-    columns: 1920
-    lines: 540
+    # For MacBook Pro
+    # columns: 500
+    # lines: 140
+    # For Dell
+    columns: 300
+    lines: 70
   padding:
     x: 2
     y: 2
@@ -25,7 +29,7 @@ font:
     family: Meslo LG S DZ for Powerline
   italic:
     family: Meslo LG S DZ for Powerline
-  size: 7
+  size: 11
   offset:
     x: 0
     y: 0
@@ -39,44 +43,40 @@ render_timer: false
 # custom_cursor_colors: false
 draw_bold_text_with_bright_colors: true
 
-# Colors (IR Black)
+# Colors (Dracula)
 colors:
   # Default colors
   primary:
-    background: '0x000000'
-    foreground: '0xffffff'
-
-  cursor:
-    text: '0xffffff'
-    cursor: '0xbbbbbb'
+    background: '0x282a36'
+    foreground: '0xf8f8f2'
 
   # Normal colors
   normal:
-    black:   '0x4e4e4e'
-    red:     '0xff6c60'
-    green:   '0xa8ff60'
-    yellow:  '0xffffb6'
-    blue:    '0x96cbfe'
-    magenta: '0xff73fd'
-    cyan:    '0xc6c5fe'
-    white:   '0xeeeeee'
+    black:   '0x000000'
+    red:     '0xff5555'
+    green:   '0x50fa7b'
+    yellow:  '0xf1fa8c'
+    blue:    '0xcaa9fa'
+    magenta: '0xff79c6'
+    cyan:    '0x8be9fd'
+    white:   '0xbfbfbf'
 
   # Bright colors
   bright:
-    black:   '0x7c7c7c'
-    red:     '0xffb6b0'
-    green:   '0xceffab'
-    yellow:  '0xffffcb'
-    blue:    '0xb5dcfe'
-    magenta: '0xff9cfe'
-    cyan:    '0xdfdffe'
-    white:   '0xffffff'
+    black:   '0x282a35'
+    red:     '0xff6e67'
+    green:   '0x5af78e'
+    yellow:  '0xf4f99d'
+    blue:    '0xcaa9fa'
+    magenta: '0xff92d0'
+    cyan:    '0x9aedfe'
+    white:   '0xe6e6e6'
 
 visual_bell:
   animation: EaseOutExpo
   duration: 100
 
-background_opacity: 0.85
+background_opacity: 0.7
 
 mouse_bindings:
   - { mouse: Middle, action: PasteSelection }
@@ -105,10 +105,10 @@ live_config_reload: true
 # You can set `shell.program` to the path of your favorite shell, e.g. `/bin/fish`.
 # Entries in `shell.args` are passed unmodified as arguments to the shell.
 #
-#shell:
-#  program: /bin/bash
-#  args:
-#    - --login
+shell:
+  program: /usr/local/bin/zsh
+  args:
+    - --login
 
 # Key bindings
 #
@@ -182,7 +182,7 @@ live_config_reload: true
 #   - ~AppKeypad
 #   - AppKeypad
 key_bindings:
-  - { key: V,  mods: Shift|Control, action: Paste                        }
+  - { key: V,        mods: Command, action: Paste                        }
   - { key: C,        mods: Command, action: Copy                         }
   - { key: Paste,                   action: Paste                        }
   - { key: Copy,                    action: Copy                         }

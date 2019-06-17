@@ -6,5 +6,7 @@ ensime.sbt
 TAGS
 .sbt-hydra-history
 
-.bloop
-.metals
+.bloop/
+.metals/
+
+.DS_Store
