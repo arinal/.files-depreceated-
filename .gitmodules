@@ -6,4 +6,4 @@
 	url = https://github.com/arinal/awesome-hammerspoon.git
 [submodule "emacs.d"]
 	path = emacs.d
-	url = https://github.com/syl20bnr/spacemacs.git
+	url = https://github.com/arinal/spacemacs.git

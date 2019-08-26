@@ -21,10 +21,13 @@ tabspaces: 8
 font:
   normal:
     family: Meslo LG S DZ for Powerline
+    # family: Meslo LG S DZ Regular Nerd Font Complete Mono
   bold:
     family: Meslo LG S DZ for Powerline
+    # family: Meslo LG S DZ Regular Nerd Font Complete Mono
   italic:
     family: Meslo LG S DZ for Powerline
+    # family: Meslo LG S DZ Regular Nerd Font Complete Mono
   size: 7
   offset:
     x: 0
@@ -35,7 +38,7 @@ font:
     # scale_with_dpi: true
   use_thin_strokes: true
 
-render_timer: false
+# render_timer: false
 # custom_cursor_colors: false
 draw_bold_text_with_bright_colors: true
 
