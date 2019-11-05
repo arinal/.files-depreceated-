@@ -32,8 +32,8 @@ Image preview for ranger
 - [w3m](http://w3m.sourceforge.net)
 
 ## Good to have
-- [CLI: improved](https://remysharp.com/2018/08/23/cli-improved#fzf--ctrlr) 
+- [CLI: improved](https://remysharp.com/2018/08/23/cli-improved#fzf--ctrlr)
 
-For faster terminal, especially if you are using iTerm2, these are better alternatives for faster rendering:
+Each of the terminal below uses GPU for faster rendering:
 - [alacritty](https://github.com/jwilm/alacritty)
 - [kitty](https://github.com/kovidgoyal/kitty)
