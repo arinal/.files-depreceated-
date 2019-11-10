@@ -2,6 +2,8 @@
 .ensime_cache/
 ensime.sbt
 
+tmux/plugins
+
 .idea/
 TAGS
 .sbt-hydra-history

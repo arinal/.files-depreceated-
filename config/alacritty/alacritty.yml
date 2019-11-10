@@ -2,13 +2,7 @@ env:
   TERM: xterm-256color
 
 window:
-  dimensions:
-    # For MacBook Pro
-    # columns: 500
-    # lines: 140
-    # For Dell
-    columns: 300
-    lines: 70
+  startup_mode: SimpleFullscreen
   padding:
     x: 2
     y: 2
@@ -29,7 +23,7 @@ font:
     family: Meslo LG S DZ for Powerline
   italic:
     family: Meslo LG S DZ for Powerline
-  size: 11
+  size: 11.0
   offset:
     x: 0
     y: 0
@@ -39,38 +33,38 @@ font:
     # scale_with_dpi: true
   use_thin_strokes: true
 
-render_timer: false
+debug.render_timer: false
 # custom_cursor_colors: false
-draw_bold_text_with_bright_colors: true
+draw_bold_text_with_bright_colors: false
 
 # Colors (Dracula)
-colors:
-  # Default colors
-  primary:
-    background: '0x282a36'
-    foreground: '0xf8f8f2'
-
-  # Normal colors
-  normal:
-    black:   '0x000000'
-    red:     '0xff5555'
-    green:   '0x50fa7b'
-    yellow:  '0xf1fa8c'
-    blue:    '0xcaa9fa'
-    magenta: '0xff79c6'
-    cyan:    '0x8be9fd'
-    white:   '0xbfbfbf'
-
-  # Bright colors
-  bright:
-    black:   '0x282a35'
-    red:     '0xff6e67'
-    green:   '0x5af78e'
-    yellow:  '0xf4f99d'
-    blue:    '0xcaa9fa'
-    magenta: '0xff92d0'
-    cyan:    '0x9aedfe'
-    white:   '0xe6e6e6'
+# colors:
+#   # Default colors
+#   primary:
+#     background: '0x282a36'
+#     foreground: '0xf8f8f2'
+# 
+#   # Normal colors
+#   normal:
+#     black:   '0x000000'
+#     red:     '0xff5555'
+#     green:   '0x50fa7b'
+#     yellow:  '0xf1fa8c'
+#     blue:    '0xcaa9fa'
+#     magenta: '0xff79c6'
+#     cyan:    '0x8be9fd'
+#     white:   '0xbfbfbf'
+# 
+#   # Bright colors
+#   bright:
+#     black:   '0x282a35'
+#     red:     '0xff6e67'
+#     green:   '0x5af78e'
+#     yellow:  '0xf4f99d'
+#     blue:    '0xcaa9fa'
+#     magenta: '0xff92d0'
+#     cyan:    '0x9aedfe'
+#     white:   '0xe6e6e6'
 
 visual_bell:
   animation: EaseOutExpo
@@ -290,6 +284,7 @@ key_bindings:
   - { key: F11,      mods: Command, chars: "\x1b[23;3~"                  }
   - { key: F12,      mods: Command, chars: "\x1b[24;3~"                  }
   - { key: NumpadEnter,             chars: "\n"                          }
+  - { key: F,        mods: Command|Control, action: ToggleFullscreen     }
 
   # Work around for meta
   - { key: A,         mods: Alt,       chars: "\x1ba"                       }
