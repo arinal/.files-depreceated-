@@ -109,15 +109,15 @@ bindsym $mod+0 workspace $chatspace
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $browserspace
-bindsym $mod+Shift+2 move container to workspace $tmuxspace   
-bindsym $mod+Shift+3 move container to workspace $readspace   
-bindsym $mod+Shift+4 move container to workspace $officespace 
-bindsym $mod+Shift+5 move container to workspace $folderspace 
-bindsym $mod+Shift+6 move container to workspace $mediaspace  
-bindsym $mod+Shift+7 move container to workspace $idespace    
-bindsym $mod+Shift+8 move container to workspace $freespace1  
-bindsym $mod+Shift+9 move container to workspace $freespace2  
-bindsym $mod+Shift+0 move container to workspace $chatspace   
+bindsym $mod+Shift+2 move container to workspace $tmuxspace
+bindsym $mod+Shift+3 move container to workspace $readspace
+bindsym $mod+Shift+4 move container to workspace $officespace
+bindsym $mod+Shift+5 move container to workspace $folderspace
+bindsym $mod+Shift+6 move container to workspace $mediaspace
+bindsym $mod+Shift+7 move container to workspace $idespace
+bindsym $mod+Shift+8 move container to workspace $freespace1
+bindsym $mod+Shift+9 move container to workspace $freespace2
+bindsym $mod+Shift+0 move container to workspace $chatspace
 
 bindsym $mod+b workspace back_and_forth
 bindsym $mod+n workspace next
@@ -138,7 +138,8 @@ set $urgent-bg-color     #E53935
 set $preview-colour      #2f343f
 
 hide_edge_borders vertical
-font pango:System San Francisco Display 9
+#font pango:System San Francisco Display 9
+font pango:DejaVuSansMono Nerd Font 9
 
 # window colors
 #                       border              background         text                 indicator
@@ -156,8 +157,8 @@ bindsym XF86AudioMute        exec --no-startup-id amixer set Master toggle # mut
 # bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp   exec xbacklight -inc 5 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
+# bindsym XF86MonBrightnessUp   exec xbacklight -inc 5 # increase screen brightness
+# bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
 
 # Media player controls
 bindsym XF86AudioPlay  exec playerctl play
@@ -179,9 +180,8 @@ workspace 9 output HDMI1
 bindsym $mod+space exec rofi -show drun -fullscreen -padding 320 "none" -hide-scrollbar
 bindsym $mod+Shift+x exec i3lock-fancy
 
-# exec /home/arinal/.config/i3/wallcron.sh 5m
 exec_always --no-startup-id compton
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id feh --bg-scale ~/pictures/wallpapers
 exec_always --no-startup-id xautolock -time 20 -locker i3lock-fancy
-exec_always --no-startup-id emacs --daemon
+exec_always --no-startup-id i3lock-fancy

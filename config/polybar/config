@@ -41,7 +41,7 @@ padding-right = 0
 module-margin-left = 0
 module-margin-right = 0
 
-font-0 = Misc Termsyn:size=8;1
+font-0 = NotoSansDisplay Nerd Font:size=9;1
 font-1 = FontAwesome:fontformat=truetype:size=10;1
 font-3 = Font Awesome 5 Free:style=Regular:pixelsize=8;1
 font-4 = Font Awesome 5 Free:style=Solid:pixelsize=8;1
@@ -95,7 +95,7 @@ bar-width = 50%
 
 label = " %output% "
 
-exec = ~/.config/polybar/mpris.sh
+# exec = ~/.config/polybar/mpris.sh
 
 
 [module/i3]
@@ -150,7 +150,7 @@ label-urgent-padding = 4
 
 [module/wireless-network]
 type = internal/network
-interface = wlp2s0
+interface = wlp59s0
 interval = 3.0
 
 format-connected-prefix = " "
@@ -214,7 +214,6 @@ label = %percentage_used%%
 [module/filesystem]
 type = internal/fs
 mount-0 = /
-mount-1 = /home
 fixed-values = true
 format-mounted = <label-mounted>
 format-unmounted = <label-unmounted>
@@ -327,23 +326,23 @@ margin-top = 5
 margin-bottom = 5
 
 
-# 
+#
 # [module/xkeyboard]
 # type = internal/xkeyboard
 # blacklist-0 = num lock
-# 
+#
 # format-prefix = " "
 # format-prefix-foreground = ${colors.foreground-alt}
 # format-prefix-underline = ${colors.secondary}
-# 
+#
 # label-layout = %layout%
 # label-layout-underline = ${colors.secondary}
-# 
+#
 # label-indicator-padding = 2
 # label-indicator-margin = 1
 # label-indicator-background = ${colors.secondary}
 # label-indicator-underline = ${colors.secondary}
-# 
+#
 #[module/xbacklight]
 #type = internal/xbacklight
 #
