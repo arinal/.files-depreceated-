@@ -66,7 +66,7 @@ let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#coc#get_
 
 
 " nerdtree
-nnoremap <leader>a :NERDTreeToggle<cr>
+nnoremap <leader>a :NERDTreeFind<cr>
 
 " nerdcommenter
 filetype plugin on

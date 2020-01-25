@@ -27,3 +27,7 @@ config/autostart
 node_modules
 discord
 jesseduffield
+__pycache__
+coc
+yarn
+

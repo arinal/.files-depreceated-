@@ -26,15 +26,19 @@ tabspaces: 8
 
 font:
   normal:
+    #family: Droid Sans Mono for Powerline Plus Nerd File Types Mono
     family: FiraCode Nerd Font Mono
     style: Regular
   bold:
+    #family: Droid Sans Mono for Powerline Plus Nerd File Types Mono
     family: FiraCode Nerd Font Mono
     style: Bold
   italic:
+    #family: Droid Sans Mono for Powerline Plus Nerd File Types Mono
     family: FiraCode Nerd Font Mono
     style: Italic
   bold_italic:
+    #family: Droid Sans Mono for Powerline Plus Nerd File Types Mono
     family: FiraCode Nerd Font Mono
     style: Bold Italic
   size: 5.5
