@@ -3,39 +3,42 @@ let mapleader = ","
 call plug#begin('~/local/share/nvim/plugged')
 
 Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-unimpaired'
 Plug 'scrooloose/nerdcommenter'
-Plug 'tpope/vim-surround'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'jiangmiao/auto-pairs'
-Plug 'tpope/vim-surround'
 Plug 'lilydjwg/colorizer'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'machakann/vim-highlightedyank'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'rbgrouleff/bclose.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
-
+Plug 'francoiscabrol/ranger.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
+Plug 'ashisha/image.vim'
 
-Plug 'jacoborus/tender.vim'
-Plug 'tomasr/molokai'
-Plug 'NLKNguyen/papercolor-theme'
+"Plug 'flazz/vim-colorschemes'
+"Plug 'jacoborus/tender.vim'
+"Plug 'tomasr/molokai'
+"Plug 'NLKNguyen/papercolor-theme'
 Plug 'joshdick/onedark.vim'
-Plug 'arcticicestudio/nord-vim'
+"Plug 'arcticicestudio/nord-vim'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-Plug 'derekwyatt/vim-scala'
-Plug 'cespare/vim-toml'
-Plug 'fatih/vim-go'
-Plug 'rust-lang/rust.vim'
-Plug 'uarun/vim-protobuf'
+Plug 'sheerun/vim-polyglot'
+"Plug 'derekwyatt/vim-scala'
+"Plug 'cespare/vim-toml'
+"Plug 'fatih/vim-go'
+"Plug 'rust-lang/rust.vim'
+"Plug 'uarun/vim-protobuf'
 
 call plug#end()
 
@@ -64,6 +67,8 @@ let g:airline#extensions#coc#enabled = 1
 let g:airline_section_error = '%{airline#util#wrap(airline#extensions#coc#get_error(),0)}'
 let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
 
+" rhubarb
+let g:github_enterprise_urls = ['https://github.bamtech.co']
 
 " nerdtree
 nnoremap <leader>a :NERDTreeFind<cr>
@@ -95,7 +100,7 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <leader>ac <Plug>(coc-codeaction)
-nnoremap <leader>f :call CocAction('format')<CR>
+nnoremap <leader>F :call CocAction('format')<CR>
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
@@ -135,3 +140,17 @@ set wildmode=longest,list,full
 "nnoremap j gj
 "nnoremap k gk
 vnoremap <leader>s :'<,'>!sort -f<cr>
+
+function! <SID>StripTrailingWhitespaces()
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    %s/\s\+$//e
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
+
+nnoremap <silent> <leader>wd :call <SID>StripTrailingWhitespaces()<CR>

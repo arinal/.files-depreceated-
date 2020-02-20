@@ -78,22 +78,22 @@ set $freespace1   "8 "
 set $freespace2   "9 "
 set $chatspace    "0  "
 
-assign [class="chromium"]          $browserspace
-assign [class="Firefox"]           $browserspace
-assign [class="Nautilus"]          $folderspace
-assign [class="jetbrains-idea-ce"] $idespace
-assign [class="MonoDevelop"]       $idespace
-assign [class="Eclipse"]           $idespace
-assign [class="Office-wps"]        $officespace
-assign [class="Office-wpp"]        $officespace
-assign [class="Office-et"]         $officespace
-assign [class="telegram"]          $chatspace
-assign [class="Evince"]            $readspace
-assign [class="Zathura"]           $readspace
-assign [class="Totem"]             $mediaspace
-assign [class="Vlc"]               $mediaspace
-assign [class="Spotify"]           $mediaspace
-assign [class="crx_hecfofbbdfadifpemejbbdcjmfmboohj"] $mediaspace
+# assign [class="chromium"]          $browserspace
+# assign [class="Firefox"]           $browserspace
+# assign [class="Nautilus"]          $folderspace
+# assign [class="jetbrains-idea-ce"] $idespace
+# assign [class="MonoDevelop"]       $idespace
+# assign [class="Eclipse"]           $idespace
+# assign [class="Office-wps"]        $officespace
+# assign [class="Office-wpp"]        $officespace
+# assign [class="Office-et"]         $officespace
+# assign [class="telegram"]          $chatspace
+# assign [class="Evince"]            $readspace
+# assign [class="Zathura"]           $readspace
+# assign [class="Totem"]             $mediaspace
+# assign [class="Vlc"]               $mediaspace
+# assign [class="Spotify"]           $mediaspace
+# assign [class="crx_hecfofbbdfadifpemejbbdcjmfmboohj"] $mediaspace
 
 # switch to workspace
 bindsym $mod+1 workspace $browserspace
@@ -128,7 +128,8 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-gaps inner 10
+gaps inner 20
+new_window 1pixel
 
 set $bg-color 	         #2f343f
 set $inactive-bg-color   #2f343f
@@ -180,8 +181,9 @@ workspace 9 output HDMI1
 bindsym $mod+space exec rofi -show drun -fullscreen -padding 320 "none" -hide-scrollbar
 bindsym $mod+Shift+x exec i3lock-fancy
 
-exec_always --no-startup-id compton
-exec_always --no-startup-id ~/.config/polybar/launch.sh
-exec_always --no-startup-id feh --bg-scale ~/pictures/wallpapers
-exec_always --no-startup-id xautolock -time 20 -locker i3lock-fancy
 exec_always --no-startup-id i3lock-fancy
+exec_always --no-startup-id xautolock -time 20 -locker i3lock-fancy
+exec_always --no-startup-id compton
+exec_always --no-startup-id ~/.config/i3/wallcron.sh 120
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec_always --no-startup-id deadd-notification-center
