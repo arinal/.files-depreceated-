@@ -178,6 +178,7 @@ workspace 7 output eDP1
 workspace 8 output HDMI1
 workspace 9 output HDMI1
 
+bindsym $mod+y exec kill -s USR1 $(pidof deadd-notification-center)
 bindsym $mod+space exec rofi -show drun -fullscreen -padding 320 "none" -hide-scrollbar
 bindsym $mod+Shift+x exec i3lock-fancy
 
