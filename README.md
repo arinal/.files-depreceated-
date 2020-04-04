@@ -4,6 +4,10 @@ Clone this repository recursively to include all dependent repositories.
 git clone --recursive https://github.com/arinal/.files
 ```
 
+Below is the desktop will look like in i3 + polybar + alacritty + neovim + tmux.
+
+![Imgur](https://i.imgur.com/APTaLCZ.png)
+
 ## Install list
 - [zsh](https://www.zsh.org/)
 - [tmux](https://github.com/tmux/tmux/wiki)

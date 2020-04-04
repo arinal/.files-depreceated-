@@ -1,0 +1,7 @@
+"mode": "angly1",
+"mode": "angly2",
+"mode": "curvy",
+"mode": "flamey",
+"mode": "blocky",
+"mode": "pixelated",
+"mode": "patched"

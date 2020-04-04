@@ -1,9 +1,27 @@
+#==========================================================
+#
+#
+#   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+#   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+#   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+#   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+#   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+#   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+#
+#
+#   To learn more about how to configure Polybar
+#   go to https://github.com/polybar/polybar
+#
+#   The README contains a lot of information
+#
+#==========================================================
+
 [colors]
 background = #cc000000
 # background = #212E36
 # background = #cf172a47
 #it's ARGB so "cfl" is for transparency
-background-alt = #cc333333
+background-alt = #cc000000
 background-unf = #cf2E463E
 background-mod0 = #cf3C5A46
 background-mod1 = #cfff02a2
@@ -16,20 +34,19 @@ foreground-alt = #bbbbbb
 primary = #000000
 secondary = #000000
 
-
 [bar/PolybarTony]
 #monitor = ${env:MONITOR:HDMI-1}
 width = 100%
 height = 30
-offset-x = 0%
-offset-y = 10%
+#offset-x = 0%
+#offset-y = 10%
 radius = 0.0
 fixed-center = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 0
+line-size = 1
 line-color = #f00
 
 border-size = 0
@@ -38,28 +55,29 @@ border-color = #00000000
 padding-left = 0
 padding-right = 0
 
-module-margin-left = 0
-module-margin-right = 0
+module-margin-left = 1
+module-margin-right = 1
 
-font-0 = NotoSansDisplay Nerd Font:size=9;1
-font-1 = FontAwesome:fontformat=truetype:size=10;1
-font-3 = Font Awesome 5 Free:style=Regular:pixelsize=8;1
-font-4 = Font Awesome 5 Free:style=Solid:pixelsize=8;1
-font-5 = Font Awesome 5 Brands:pixelsize=8;1
+font-0 = firacode:pixelsize=9#1
+#font-0 = NotoSansDisplay Nerd Font:size=9;1
+font-1 = FontAwesome:fontformat=truetype:size=11;1
 font-2 = sm4tik:pixelsize=10;1
+font-3 = Font Awesome 5 Free:style=Regular:pixelsize=10;1
+font-4 = Font Awesome 5 Free:style=Solid:pixelsize=10;1
+font-5 = Font Awesome 5 Brands:pixelsize=10;1
 
 modules-left = i3
 modules-center = music date weather
 modules-right = cpu memory filesystem wireless-network volume battery powermenu
 
-# tray-position = hidden
-# tray-padding = 11
+tray-position = right
+tray-padding = 2
 # tray-transparent = true
-# tray-offset-y = 22
-# tray-offset-x = -0
+#tray-offset-y = 0
+#tray-offset-x = 0
 # tray-maxsize = 18
-# tray-detached = true
-# tray-background = #0063ff
+#tray-detached = false
+#tray-background = #0063ff
 
 #wm-restack = bspwm
 # wm-restack = i3
@@ -77,10 +95,10 @@ modules-right = cpu memory filesystem wireless-network volume battery powermenu
 type = custom/script
 interval = 60
 
-;format-background = ${colors.background-alt}
+format-background = ${colors.background-alt}
+format-underline = #cf228E
 format = <label>
-format-prefix = "    "
-format-suffix = "   "
+format-prefix = "   "
 format-prefix-foreground = ${colors.foreground-alt}
 exec = python ~/.config/polybar/weather.py
 
@@ -105,7 +123,7 @@ type = internal/i3
 #   %mode%
 # Default: %mode%
 label-mode = %mode%
-label-mode-padding = 2
+label-mode-padding = 0
 label-mode-background = #e60053
 
 # Available tokens:
@@ -118,7 +136,7 @@ label-focused = %name%
 label-focused-foreground = #ffffff
 label-focused-background = ${colors.background-alt}
 label-focused-underline = #fba922
-label-focused-padding = 4
+label-focused-padding = 3
 
 # Available tokens:
 #   %name%
@@ -126,7 +144,7 @@ label-focused-padding = 4
 #   %index%
 # Default: %icon%  %name%
 label-unfocused = %name%
-label-unfocused-padding = 4
+label-unfocused-padding = 3
 
 # Available tokens:
 #   %name%
@@ -135,7 +153,7 @@ label-unfocused-padding = 4
 # Default: %icon%  %name%
 label-visible = %name%
 label-visible-underline = #555555
-label-visible-padding = 4
+label-visible-padding = 3
 
 # Available tokens:
 #   %name%
@@ -145,7 +163,7 @@ label-visible-padding = 4
 label-urgent = %name%
 label-urgent-foreground = #000000
 label-urgent-background = ${colors.background-alrt}
-label-urgent-padding = 4
+label-urgent-padding = 3
 
 
 [module/wireless-network]
@@ -166,10 +184,10 @@ format-disconnected-background = ${colors.background-unf}
 #label-disconnected = %ifname% disconnected
 label-disconnected-foreground = ${colors.foreground-alt}
 
-ramp-signal-0 = "    0%"
-ramp-signal-1 = "    25%"
-ramp-signal-2 = "    50%"
-ramp-signal-3 = "    75%"
+ramp-signal-0 = "      0%"
+ramp-signal-1 = "     25%"
+ramp-signal-2 = "     50%"
+ramp-signal-3 = "     75%"
 ramp-signal-4 = "    100%"
 ramp-signal-foreground = ${colors.foreground-alt}
 
@@ -178,14 +196,15 @@ ramp-signal-foreground = ${colors.foreground-alt}
 type = internal/date
 interval = 5
 
-date = 
-date-alt = " %Y-%m-%d"
+#date = " %Y-%m-%d"
+#date-alt = " %Y-%M-%d"
 
-time = "   %a %b %d     %I:%M %p  "
+time = " %A %d %B %Y   %I:%M %p  "
+#time = "   %a %b %d    %I:%M %p  "
 time-alt = %H:%M:%S
 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
+format-underline = #cf228E
 label = %date% %time%
 
 
@@ -246,8 +265,8 @@ battery = BAT0
 adapter = AC
 full-at = 97
 
-format-full-background = #cf228EB3
-format-charging-background = #cf228EB3
+#format-full-background = #cf228EB3
+#format-charging-background = #cf228EB3
 format-charging = "⁣   <animation-charging> <label-charging>   "
 format-charging-underline = #ffb52a
 format-charging-suffix = "   "
