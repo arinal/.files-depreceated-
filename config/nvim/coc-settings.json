@@ -11,6 +11,13 @@
 			"filetypes": [
 				"go"
 			]
+		},
+		"terraform": {
+			"command": "terraform-lsp",
+			"filetypes": [
+				"terraform"
+			],
+			"initializationOptions": {}
 		}
 	},
 	"metals.statusBarEnabled": true
