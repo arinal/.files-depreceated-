@@ -50,16 +50,16 @@ bindsym $mod+minus scratchpad show
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        bindsym h resize shrink width  60 px or 60 ppt
-        bindsym k resize shrink height 60 px or 60 ppt
-        bindsym j resize grow   height 60 px or 60 ppt
-        bindsym l resize grow   width  60 px or 60 ppt
+        bindsym h resize shrink width  5 px or 5 ppt
+        bindsym k resize shrink height 5 px or 5 ppt
+        bindsym j resize grow   height 5 px or 5 ppt
+        bindsym l resize grow   width  5 px or 5 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left  resize shrink width  5 px or 5 ppt
-        bindsym Down  resize grow   height 5 px or 5 ppt
-        bindsym Up    resize shrink height 5 px or 5 ppt
-        bindsym Right resize grow   width  5 px or 5 ppt
+        bindsym Left  resize shrink width  2 px or 1 ppt
+        bindsym Down  resize grow   height 2 px or 1 ppt
+        bindsym Up    resize shrink height 2 px or 1 ppt
+        bindsym Right resize grow   width  2 px or 1 ppt
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
@@ -182,9 +182,8 @@ bindsym $mod+y exec kill -s USR1 $(pidof deadd-notification-center)
 bindsym $mod+space exec rofi -show drun -fullscreen -padding 320 "none" -hide-scrollbar
 bindsym $mod+Shift+x exec i3lock-fancy
 
-exec_always --no-startup-id i3lock-fancy
+exec --no-startup-id i3lock-fancy
 exec_always --no-startup-id xautolock -time 20 -locker i3lock-fancy
 exec_always --no-startup-id compton
 exec_always --no-startup-id ~/.config/i3/wallcron.sh 120
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-exec_always --no-startup-id deadd-notification-center

@@ -1,24 +1,58 @@
 {
-	"languageserver": {
-		"golang": {
-			"command": "gopls",
-			"rootPatterns": [
-				"go.mod",
-				".vim/",
-				".git/",
-				".hg/"
-			],
-			"filetypes": [
-				"go"
-			]
-		},
-		"terraform": {
-			"command": "terraform-lsp",
-			"filetypes": [
-				"terraform"
-			],
-			"initializationOptions": {}
-		}
-	},
-	"metals.statusBarEnabled": true
+  "languageserver": {
+    "ccls": {
+      "command": "ccls",
+      "filetypes": ["c", "cpp", "objc", "cuda", "objcpp"],
+      "rootPatterns": [
+        ".ccls",
+        "compile_commands.json",
+        ".vim/",
+        ".git/",
+        ".hg/"
+      ],
+      "initializationOptions": {
+        "client": {
+          "snippetSupport": true
+        },
+        "cache": {
+          "directory": "/tmp/ccls"
+        }
+      }
+    },
+    "groovy": {
+      "command": "java",
+      "args": ["-jar", "/home/arinal/local/bin/groovy-language-server-all.jar"],
+      "filetypes": ["groovy"]
+    },
+    "terraform": {
+      "command": "terraform-lsp",
+      "filetypes": ["terraform"],
+      "initializationOptions": {}
+    }
+  },
+  "go.goplsOptions": {
+    "completeUnimported": true
+  },
+  "emmet.includeLanguages": {
+    "vue-html": "html",
+    "javascript": "javascriptreact"
+  },
+  "yaml.schemas": {
+    "kubernetes": "kubernetes*/*.yaml"
+  },
+  "python.venvPath": "env",
+  "python.jediEnabled": false,
+  "python.linting.pylintPath": "/home/arinal/.local/bin/pylint",
+  "python.formatting.autopep8Path": "/home/arinal/.local/bin/autopep8",
+  "explorer.icon.enableNerdfont": true,
+  "explorer.previewAction.onHover": false,
+  "explorer.keyMappings": {
+    "s": false,
+    "S": false,
+    "o": "open:split",
+    "O": "open:split:plain"
+  },
+  "coc.preferences.formatOnSaveFiletypes": ["dart", "java"],
+  "metals.statusBarEnabled": true,
+  "codeLens.enable": true
 }

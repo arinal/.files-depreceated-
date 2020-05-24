@@ -1,13 +1,19 @@
 {
-	"mode": "curvy",
-	"segments": [
-		"virtual_env",
-		"username",
-		"hostname",
-		"ssh",
-		"cwd",
-		"git",
-		"jobs",
-		"root"
-	]
+  "mode": "curvy",
+  "segments": [
+    "virtual_env",
+    "aws_profile",
+    "time",
+    "ssh",
+    "cwd",
+    "git",
+    "hg",
+    "root"
+  ],
+  "time": {
+    "format": "%H:%M"
+  },
+  "vcs": {
+    "show_symbol": true
+  }
 }
