@@ -42,23 +42,13 @@ Plug 'honza/vim-snippets'
 call plug#end()
 
 "{{{ sneak
-
 let g:sneak#label = 1
 let g:sneak#use_ic_scs = 1
-
 "}}}
 
 "{{{ colors
 set termguicolors
 syntax on
-" let g:onedark_termcolors = 256
-" colorscheme tender
-" colorscheme moonfly
-" colorscheme nightfly
-" colorscheme molokai
-" colorscheme PaperColor
-" colorscheme nord
-" colorscheme ayu
 
 let g:onedark_hide_endofbuffer = 1
 let g:onedark_terminal_italics = 1
@@ -79,11 +69,9 @@ let g:ranger_map_keys = 0
 map <leader>ft :Ranger<CR>
 "}}}
 
-" {{{ git-gutter
-
+"{{{ vim-fugitive
 nnoremap ,gg :G<cr>
-
-" }}}
+"}}}
 
 "{{{ airline
 let g:airline_theme='atomic'
@@ -118,37 +106,17 @@ nmap <leader>9 <Plug>AirlineSelectTab9
 let g:github_enterprise_urls = ['https://github.bamtech.co']
 "}}}
 
-"{{{ nerdtree
 
-" let NERDTreeMinimalUI = 1
-" let NERDTreeDirArrows = 0
-" " let NERDTreeQuitOnOpen = 1
-" let NERDTreeAutoDeleteBuffer = 1
-
-" nnoremap <leader>fa :NERDTreeFind<cr>
-" noremap <leader>ff :NERDTreeToggle<cr>
-
-" function! NERDTreeRefresh()
-"     if &filetype == "nerdtree"
-"         silent exe substitute(mapcheck("R"), "<CR>", "", "")
-"     endif
-" endfunction
-
-" autocmd BufEnter * call NERDTreeRefresh()
-"}}}
-
-" {{{ close-buffers
+"{{{ close-buffers
 nnoremap <leader>bD :Bdelete hidden<CR>
-" }}}
+"}}}
 
 "{{{ fzf
 nnoremap <C-p> :FZF<cr>
-
 nnoremap ,s :Rg<cr>
 nnoremap :: :Commands<cr>
 nnoremap ,bb :Buffers<cr>
 nnoremap ,bh :History<cr>
-
 "}}}
 
 "{{{ vim-scala
@@ -156,15 +124,31 @@ au BufRead,BufNewFile *.sbt set filetype=scala
 "}}}
 
 "{{{ vim-easy-align
-
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
-"
 "}}}
 
-"{{{ coc from github
-"
-let g:coc_global_extensions = ['coc-flutter', 'coc-yaml', 'coc-prettier', 'coc-emmet', 'coc-html', 'coc-snippets', 'coc-explorer', 'coc-go', 'coc-tsserver', 'coc-rls', 'coc-r-lsp', 'coc-python', 'coc-omnisharp', 'coc-metals', 'coc-lua', 'coc-json', 'coc-java', 'coc-fsharp', 'coc-css']
+"{{{ coc.vim
+let g:coc_global_extensions = [
+            \ 'coc-flutter',
+            \ 'coc-yaml',
+            \ 'coc-prettier',
+            \ 'coc-emmet',
+            \ 'coc-html',
+            \ 'coc-snippets',
+            \ 'coc-explorer',
+            \ 'coc-go',
+            \ 'coc-tsserver',
+            \ 'coc-rls',
+            \ 'coc-r-lsp',
+            \ 'coc-python',
+            \ 'coc-omnisharp',
+            \ 'coc-metals',
+            \ 'coc-lua',
+            \ 'coc-json',
+            \ 'coc-java',
+            \ 'coc-fsharp',
+            \ 'coc-css']
 
 set hidden
 
@@ -299,7 +283,6 @@ nnoremap <silent> <space>tf :<C-u>CocCommand metals.revealInTreeView metalsBuild
 "}}}
 
 "{{{ coc-snippets
-
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? coc#_select_confirm() :
       \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
@@ -312,7 +295,6 @@ function! s:check_back_space() abort
 endfunction
 
 let g:coc_snippet_next = '<tab>'
-
 "}}}
 
 " {{{ coc-explorer
@@ -320,12 +302,7 @@ nmap <leader>fa :CocCommand explorer<CR>
 nmap <leader>ff :CocCommand explorer --preset floating<CR>
 " }}}
 
-" {{{
-let todoist_api_key = '0ca4c10f9c9d9bd359f12efb538555e5a2af8da0'
-" }}}
-
 "{{{ Free config
-
 inoremap fd <Esc>
 
 set foldmethod=marker
@@ -369,7 +346,6 @@ aug i3config_ft_detection
   au!
   au BufNewFile,BufRead ~/.files/config/i3/config set filetype=i3config
 aug end
-
 "}}}
 
 " Plug 'rafi/awesome-vim-colorschemes'
