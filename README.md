@@ -4,14 +4,16 @@ Clone this repository recursively to include all dependent repositories.
 git clone --recursive https://github.com/arinal/.files
 ```
 
-Typical desktop session when i3 + polybar + alacritty + neovim + tmux are used at once.
+Typical desktop session when i3 + polybar + alacritty + neovim + tmux are being used at once.
 
 ![Imgur](https://i.imgur.com/1ZKLA0I.png)
+
+## Good to have
+- [CLI: improved](https://remysharp.com/2018/08/23/cli-improved#fzf--ctrlr) 
 
 ## Install list
 - [zsh](https://www.zsh.org/)
 - [tmux](https://github.com/tmux/tmux/wiki)
-- [powerline](https://github.com/powerline/powerline)
 - [powerline fonts](https://github.com/powerline/fonts/blob/master/README.rst#L7)
 - [powerline-shell](https://github.com/b-ryan/powerline-shell)
 - [prezto](https://github.com/sorin-ionescu/prezto)
@@ -34,9 +36,6 @@ i3 Window Manager
 
 Image preview for ranger
 - [w3m](http://w3m.sourceforge.net)
-
-## Good to have
-- [CLI: improved](https://remysharp.com/2018/08/23/cli-improved#fzf--ctrlr) 
 
 Try these for faster terminal:
 - [alacritty](https://github.com/jwilm/alacritty)
