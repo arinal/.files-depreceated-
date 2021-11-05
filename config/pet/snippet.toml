@@ -1,0 +1,131 @@
+[[snippets]]
+  description = "Fuzzy find (search) neuron by title"
+  command = "neuron search -e -d /home/arinal/neuron"
+  tag = ["neuron", "note", "zattelkasten", "writing", "documentation"]
+  output = ""
+
+[[snippets]]
+  description = "Edit i3 window manager config"
+  command = "e ~/.files/config/i3/config"
+  tag = ["edit", "dotfiles", "config", "i3", "window"]
+  output = ""
+
+[[snippets]]
+  description = "Edit zshrc config"
+  command = "e /home/arinal/.files/zprezto/runcoms/zshrc"
+  tag = ["edit", "dotfiles", "config", "zshrc", "zshell", "zprezto"]
+  output = ""
+
+[[snippets]]
+  description = "Edit file manager (ranger) configuration"
+  command = "e ~/.files/config/ranger/rc.conf"
+  tag = [".files", "edit", "ranger", "configuration"]
+  output = ""
+
+[[snippets]]
+  description = "Edit lunarvim config"
+  command = "e ~/.config/lvim/config.lua"
+  tag = ["edit", "config", "dotfiles", "nvim", "lvim", " lunarvim"]
+  output = ""
+
+[[snippets]]
+  description = "Edit polybar config"
+  command = "e ~/.config/polybar/config"
+  tag = ["edit", "config", "dotfiles", "polybar", "topbar", "menu"]
+  output = ""
+
+[[snippets]]
+  description = "Edit rofi (floating main menu) config"
+  command = "e /home/arinal/.files/config/rofi/config.rasi"
+  tag = ["edit", "config", "dotfiles", "rofi", "theme", "main", "menu"]
+  output = ""
+
+[[snippets]]
+  description = "Present a default sample presentation"
+  command = "present /home/arinal/sources/python/present/examples/sample.md "
+  tag = ["presentation", "power point", "ppt", "demo", "animation"]
+  output = ""
+
+[[snippets]]
+  description = "Present a coding animation (codeio)"
+  command = "present /home/arinal/sources/python/present/examples/codio.md "
+  tag = ["presentation", "power point", "coding", "animation", "codeio"]
+  output = ""
+
+[[snippets]]
+  description = "Edit tmux config"
+  command = "e /home/arinal/.files/tmux.conf "
+  tag = ["tmux", "edit", "config", "dotfiles"]
+  output = ""
+
+[[snippets]]
+  description = "Displaying keystroke on screen"
+  command = "screenkey"
+  tag = ["keyboard", "display", "monitor", "youtuber", "recording"]
+  output = ""
+
+[[snippets]]
+  description = "Find pacman orphaned package"
+  command = "pacman -Qtdq"
+  tag = ["package", "arch", "find", "query", "search", "orphan", "clean"]
+  output = ""
+
+[[snippets]]
+  description = "Find neuron by content"
+  command = "neuron search -ea -d /home/arinal/neuron"
+  tag = ["note", "edit", "fuzzy", "find", "content", "all"]
+  output = ""
+
+[[snippets]]
+  description = "Create new neuron document (taking a new note)"
+  command = "neuron new -e -d /home/arinal/neuron"
+  tag = ["note", "new", "taking-note"]
+  output = ""
+
+[[snippets]]
+  description = "Display curlable parrot animation"
+  command = "curl parrot.live"
+  tag = ["fun", "curlable", "animation", "ascii"]
+  output = ""
+
+[[snippets]]
+  description = "Display curlable cryptocurrency price summary"
+  command = "curl rate.sx "
+  tag = ["fun", "curlable", "table", "sheets", "bitcoin", "cryptos", "BTC", "ascii"]
+  output = ""
+
+[[snippets]]
+  description = "Display curlable one cryptocurrency price chart"
+  command = "curl rate.sx/<coin=btc>@<interval=30d>"
+  tag = ["curlable", "chart", "sheets", "bitcoin", "cryptos", "BTC", "ascii"]
+  output = ""
+
+[[snippets]]
+  description = "Shorten the given url using curlable"
+  command = "curl -F'shorten=https://<url>' https://0x0.st"
+  tag = ["curlable", "url", "short", "bitly"]
+  output = ""
+
+[[snippets]]
+  description = "Translate the given english word using curlable"
+  command = "curl dict://dict.org/d:<word>"
+  tag = ["curlable", "dictionary", "translate", "english"]
+  output = ""
+
+[[snippets]]
+  description = "Show QR code from the given string using curlable"
+  command = "curl qrenco.de/<string>"
+  tag = ["curlable", "qr", "code", "bar", "fun"]
+  output = ""
+
+[[snippets]]
+  description = "Git fetch and merge with master"
+  command = "git fetch && git merge origin/master"
+  tag = ["git", "merge", "master", "branch", "fetch"]
+  output = ""
+
+[[snippets]]
+  description = "Edit ranger scope file (file handler)"
+  command = "e ~/.files/config/ranger/scope.sh"
+  tag = ["ranger", "file", "edit", "scope", "mime"]
+  output = ""

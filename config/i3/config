@@ -65,59 +65,46 @@ mode "resize" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
+
 bindsym $mod+r mode "resize"
 
 set $browserspace "1  "
 set $tmuxspace    "2  "
-set $readspace    "3 "
-set $officespace  "4 "
-set $folderspace  "5  "
+set $chatspace    "3  "
+set $readspace    "4 "
+set $officespace  "5 "
 set $mediaspace   "6 "
-set $idespace     "7 "
-set $freespace1   "8 "
-set $freespace2   "9 "
-set $chatspace    "0  "
 
-# assign [class="chromium"]          $browserspace
-# assign [class="Firefox"]           $browserspace
-# assign [class="Nautilus"]          $folderspace
-# assign [class="jetbrains-idea-ce"] $idespace
-# assign [class="MonoDevelop"]       $idespace
-# assign [class="Eclipse"]           $idespace
-# assign [class="Office-wps"]        $officespace
-# assign [class="Office-wpp"]        $officespace
-# assign [class="Office-et"]         $officespace
-# assign [class="telegram"]          $chatspace
-# assign [class="Evince"]            $readspace
-# assign [class="Zathura"]           $readspace
-# assign [class="Totem"]             $mediaspace
-# assign [class="Vlc"]               $mediaspace
-# assign [class="Spotify"]           $mediaspace
-# assign [class="crx_hecfofbbdfadifpemejbbdcjmfmboohj"] $mediaspace
+set $tmuxspace2 "7  "
+set $idespace   "8 "
+set $freespace1 "9 "
+set $freespace2 "0 "
 
 # switch to workspace
 bindsym $mod+1 workspace $browserspace
 bindsym $mod+2 workspace $tmuxspace
-bindsym $mod+3 workspace $readspace
-bindsym $mod+4 workspace $officespace
-bindsym $mod+5 workspace $folderspace
+bindsym $mod+3 workspace $chatspace
+bindsym $mod+4 workspace $readspace
+bindsym $mod+5 workspace $officespace
 bindsym $mod+6 workspace $mediaspace
-bindsym $mod+7 workspace $idespace
-bindsym $mod+8 workspace $freespace1
-bindsym $mod+9 workspace $freespace2
-bindsym $mod+0 workspace $chatspace
+
+bindsym $mod+7 workspace $tmuxspace2
+bindsym $mod+8 workspace $idespace
+bindsym $mod+9 workspace $freespace1
+bindsym $mod+0 workspace $freespace2
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $browserspace
 bindsym $mod+Shift+2 move container to workspace $tmuxspace
-bindsym $mod+Shift+3 move container to workspace $readspace
-bindsym $mod+Shift+4 move container to workspace $officespace
-bindsym $mod+Shift+5 move container to workspace $folderspace
+bindsym $mod+Shift+3 move container to workspace $chatspace
+bindsym $mod+Shift+4 move container to workspace $readspace
+bindsym $mod+Shift+5 move container to workspace $officespace
 bindsym $mod+Shift+6 move container to workspace $mediaspace
-bindsym $mod+Shift+7 move container to workspace $idespace
-bindsym $mod+Shift+8 move container to workspace $freespace1
-bindsym $mod+Shift+9 move container to workspace $freespace2
-bindsym $mod+Shift+0 move container to workspace $chatspace
+
+bindsym $mod+Shift+7 move container to workspace $tmuxspace2
+bindsym $mod+Shift+8 move container to workspace $idespace
+bindsym $mod+Shift+9 move container to workspace $freespace1
+bindsym $mod+Shift+0 move container to workspace $freespace2
 
 bindsym $mod+b workspace back_and_forth
 bindsym $mod+n workspace next
@@ -167,23 +154,45 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext  exec playerctl next
 bindsym XF86AudioPrev  exec playerctl previous
 
-workspace 0 output eDP1
-workspace 1 output eDP1
-workspace 2 output eDP1
-workspace 3 output eDP1
-workspace 4 output eDP1
-workspace 5 output eDP1
-workspace 6 output eDP1
-workspace 7 output eDP1
-workspace 8 output HDMI1
-workspace 9 output HDMI1
+workspace  $browserspace output DP-3
+workspace  $tmuxspace    output DP-3
+workspace  $chatspace    output DP-3
+workspace  $readspace    output DP-3
+workspace  $officespace  output DP-3
+workspace  $mediaspace   output DP-3
+
+workspace  $tmuxspace2   output eDP-1
+workspace  $idespace     output eDP-1
+workspace  $freespace1   output eDP-1
+workspace  $freespace2   output eDP-1
 
 bindsym $mod+y exec kill -s USR1 $(pidof deadd-notification-center)
 bindsym $mod+space exec rofi -show drun -fullscreen -padding 320 "none" -hide-scrollbar
+# bindsym $mod+space exec rofi -show run -theme-str '#window {fullscreen: true; padding: 320;}' -padding 320 "none"
 bindsym $mod+Shift+x exec i3lock-fancy
 
 exec --no-startup-id i3lock-fancy
 exec_always --no-startup-id xautolock -time 20 -locker i3lock-fancy
-exec_always --no-startup-id compton
+exec_always --no-startup-id picom
 exec_always --no-startup-id ~/.config/i3/wallcron.sh 120
 exec_always --no-startup-id ~/.config/polybar/launch.sh
+
+# set $folderspace  "5  "
+# set $idespace     "7 "
+
+# assign [class="chromium"]          $browserspace
+# assign [class="Firefox"]           $browserspace
+# assign [class="Nautilus"]          $folderspace
+# assign [class="jetbrains-idea-ce"] $idespace
+# assign [class="MonoDevelop"]       $idespace
+# assign [class="Eclipse"]           $idespace
+# assign [class="Office-wps"]        $officespace
+# assign [class="Office-wpp"]        $officespace
+# assign [class="Office-et"]         $officespace
+# assign [class="telegram"]          $chatspace
+# assign [class="Evince"]            $readspace
+# assign [class="Zathura"]           $readspace
+# assign [class="Totem"]             $mediaspace
+# assign [class="Vlc"]               $mediaspace
+# assign [class="Spotify"]           $mediaspace
+# assign [class="crx_hecfofbbdfadifpemejbbdcjmfmboohj"] $mediaspace

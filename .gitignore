@@ -31,3 +31,23 @@ __pycache__
 coc
 yarn
 
+config/Android Open Source Project/
+config/Bitwarden/
+config/Code - OSS/
+config/Dharkael/
+config/Thunar/
+config/Unknown Organization/
+config/bluejeans-v2/
+config/cef_user_data/
+config/chromium/
+config/fontforge/
+config/inkscape/
+config/nvim/.netrwhist
+config/polybar/config.bak
+config/polybar/polybar.old
+config/spotify/
+config/terminator/
+config/termshark/
+config/unity3d/
+config/xfce4/
+config/zoomus.conf

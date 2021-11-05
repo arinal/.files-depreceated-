@@ -35,7 +35,7 @@ primary = #000000
 secondary = #000000
 
 [bar/PolybarTony]
-#monitor = ${env:MONITOR:HDMI-1}
+monitor = ${env:MONITOR:HDMI-1}
 width = 100%
 height = 30
 #offset-x = 0%
@@ -103,15 +103,15 @@ format-prefix-foreground = ${colors.foreground-alt}
 exec = python ~/.config/polybar/weather.py
 
 
-[module/music]
-type = custom/script
-interval = 1
-bar-width = 50%
+# [module/music]
+# type = custom/script
+# interval = 1
+# bar-width = 50%
 
 #format-background = ${colors.background-alt}
 #format-foreground = ${colors.foreground-alt}
 
-label = " %output% "
+# label = " %output% "
 
 # exec = ~/.config/polybar/mpris.sh
 

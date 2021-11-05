@@ -1,6 +1,6 @@
 [core]
 	excludesfile = ~/.gitignore
-	editor = nvim
+	editor = lvim
 
 [user]
 	email = dicky.arinal@gmail.com
