@@ -31,6 +31,8 @@ __pycache__
 coc
 yarn
 
+packer_compiled.lua
+
 config/Android Open Source Project/
 config/Bitwarden/
 config/Code - OSS/
