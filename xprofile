@@ -4,6 +4,3 @@ deadd-notification-center &
 blueman-applet &
 
 xrandr --output eDP-1 --right-of DP-3 --mode 2560x1440
-
-# sudo openconnect vpn.disneystreaming.com/ta -u dicky.arinal@disneystreaming.com
-# systemctl start docker

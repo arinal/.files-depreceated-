@@ -13,6 +13,7 @@
     pkgs.ripgrep
     pkgs.lsd
     pkgs.jq
+    pkgs.jc
     pkgs.yq
     pkgs.fzf
     pkgs.pet

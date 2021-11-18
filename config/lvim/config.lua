@@ -77,7 +77,7 @@ lvim.plugins = {
 	"tpope/vim-repeat",
 	"ChristianChiarulli/nvim-ts-rainbow",
 	{ "tpope/vim-surround", keys = { "c", "d", "y" } },
-	"unblevable/quick-scope",
+	-- "unblevable/quick-scope",
 	{
 		"karb94/neoscroll.nvim",
 		config = function()
@@ -124,7 +124,8 @@ lvim.plugins = {
 	},
 	"rcarriga/nvim-dap-ui",
 	"theHamsta/nvim-dap-virtual-text",
-	-- LSP clients
+	-- Language
+  "ChristianChiarulli/vim-solidity",
 	{
 		"scalameta/nvim-metals",
 		config = function()
@@ -145,11 +146,11 @@ require("neuron").setup({
 	leader = "gz",
 })
 
--- local dap_install = require("dap-install")
--- local dbg_list = require("dap-install.api.debuggers").get_installed_debuggers()
--- for _, debugger in ipairs(dbg_list) do
--- 	dap_install.config(debugger)
--- end
+local dap_install = require("dap-install")
+local dbg_list = require("dap-install.api.debuggers").get_installed_debuggers()
+for _, debugger in ipairs(dbg_list) do
+	dap_install.config(debugger)
+end
 
--- require("dapui").setup()
--- require("nvim-dap-virtual-text").setup()
+require("dapui").setup()
+require("nvim-dap-virtual-text").setup()

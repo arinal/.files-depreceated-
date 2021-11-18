@@ -12,14 +12,14 @@
 
 [[snippets]]
   description = "Edit zshrc config"
-  command = "e /home/arinal/.files/zprezto/runcoms/zshrc"
-  tag = ["edit", "dotfiles", "config", "zshrc", "zshell", "zprezto"]
+  command = "e /home/arinal/.files/zshrc"
+  tag = ["edit", "dotfiles", "config", "zshrc", "zshell"]
   output = ""
 
 [[snippets]]
   description = "Edit file manager (ranger) configuration"
   command = "e ~/.files/config/ranger/rc.conf"
-  tag = [".files", "edit", "ranger", "configuration"]
+  tag = [".files", "edit", "dotfiles", "ranger", "configuration"]
   output = ""
 
 [[snippets]]
@@ -73,7 +73,7 @@
 [[snippets]]
   description = "Find neuron by content"
   command = "neuron search -ea -d /home/arinal/neuron"
-  tag = ["note", "edit", "fuzzy", "find", "content", "all"]
+  tag = ["note", "edit", "dotfiles", "fuzzy", "find", "content", "all"]
   output = ""
 
 [[snippets]]
@@ -127,5 +127,112 @@
 [[snippets]]
   description = "Edit ranger scope file (file handler)"
   command = "e ~/.files/config/ranger/scope.sh"
-  tag = ["ranger", "file", "edit", "scope", "mime"]
+  tag = ["ranger", "file", "edit", "dotfiles", "scope", "mime"]
+  output = ""
+
+[[snippets]]
+  description = "GCC cross compile to ARM (Cortex A8)"
+  command = "arm-none-eabi-gcc -c -mcpu=<cpu=cortex-a8> <filename=main>.c -o <filename=main>.o"
+  tag = ["gcc", "compile", "cross-compile", "arm", "C", "cortex", "A8"]
+  output = ""
+
+[[snippets]]
+  description = "Cross assemble ARM assembly (Cortex-A8)"
+  command = "arm-none-eabi-as -mcpu=<cpu=cortex-a8> <filename=main>.s -o <filename=main>.o"
+  tag = ["assembly", "compile", "cross-assemble", "arm", "gas", "cortex", "A8"]
+  output = ""
+
+[[snippets]]
+  description = "Link a cross compiled ARM object into elf an elf file"
+  command = "arm-none-eabi-ld -T <linker-file=main>.ld *.o -o <linker-file=main>.elf "
+  tag = ["link", "script", "arm", "ld", "cortex", "A8"]
+  output = ""
+
+[[snippets]]
+  description = "Obj-copy ARM elf file into executable headless ARM binary"
+  command = "arm-none-eabi-objcopy -O binary <filename=main>.elf <filename=main>.bin"
+  tag = ["objcopy", "stripped", "binaty", "arm", "cortex", "A8"]
+  output = ""
+
+[[snippets]]
+  description = "Read binary ELF (Executable Linux Format)"
+  command = "readelf -a <filename>"
+  tag = ["binary", "elf", "header", "hexa", "format"]
+  output = ""
+
+[[snippets]]
+  description = "GCC a C file into debuggable executable"
+  command = "gcc -g <filename>.c -o <filename>"
+  tag = ["gcc", "elf", "debug", "symbol", "executable"]
+  output = ""
+
+[[snippets]]
+  description = "Edit ranger rifle configuration (default file opener)"
+  command = "e ~/.files/config/ranger/rifle.conf"
+  tag = ["edit", "nvim", "config", "rifle", "ranger", "dotfiles"]
+  output = ""
+
+[[snippets]]
+  description = "Display keystroke on the screen"
+  command = "screenkey --position fixed --geometry 628x160+5770+1280 --opacity 0.1\\n"
+  tag = ["display", "monitor", "keyboard", "keystroke", "keypress"]
+  output = ""
+
+[[snippets]]
+  description = "Display list of directory in path environment variable"
+  command = "echo ${PATH} | tr ':' '\\n' "
+  tag = ["echo", "list", "environment", "variable", "PATH", "path", "show"]
+  output = ""
+
+[[snippets]]
+  description = "Edit zshenv config file"
+  command = "e /home/arinal/.files/zshenv"
+  tag = ["edit", "dotfiles", ".files", "zshenv", "zsh", "config"]
+  output = ""
+
+[[snippets]]
+  description = "Create a new react js project"
+  command = "npx create-react-app <name>"
+  tag = ["init", "project", "js", "ts", "javascript", "web", "frontend", "react"]
+  output = ""
+
+[[snippets]]
+  description = "Display current internet speed/bandwidth in Mbps"
+  command = "speedtest"
+  tag = ["internet", "speed", "ookla", "mbps", "bandwidth"]
+  output = ""
+
+[[snippets]]
+  description = "Edit pet snippet file"
+  command = "e ~/.files/config/pet/snippet.toml "
+  tag = ["snippet", "pet", "explorability"]
+  output = ""
+
+[[snippets]]
+  description = "Edit nix home manager file"
+  command = "e ~/.config/nixpkgs/home.nix"
+  tag = ["edit", "nix", "package", "install", "program", "application"]
+  output = ""
+
+[[snippets]]
+  description = "Display who listen (or use) on TCP port number"
+  command = "lsof -i TCP:<port>"
+  tag = ["lsof", "file", "listen", "tcp", "port"]
+  output = ""
+
+[[snippets]]
+  description = "Edit zpreztorc configuration"
+  command = "e /home/arinal/.files/zprezto/runcoms/zpreztorc"
+  output = ""
+
+[[snippets]]
+  description = "View pull request of current branch on Github website"
+  command = "gh pr view --web"
+  tag = ["github", "web", "pr", "branch", "view"]
+  output = ""
+
+[[snippets]]
+  description = "Edit Powerlevel10k configuration"
+  command = "e ~/.p10k.zsh"
+  tag = ["prompt", "unicode", "powerline", "command", "powerlevel10k"]
   output = ""
