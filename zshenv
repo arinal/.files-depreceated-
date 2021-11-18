@@ -1,12 +1,5 @@
 export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive
 
-export BASE16_THEME=horizon-dark
-# export BASE16_THEME=brewer
-# export BASE16_THEME=savanna
-
-# export ZINIT_HOME=/nix/store/20isg6ybqk73xk56a754h92vvpwhx29a-zinit-3.7/share/zinit
-# source $ZINIT_HOME/zinit.zsh
-
 export PATH=~/.local/bin:~/local/bin:$PATH
 export TERMINAL=alacritty
 export BROWSER=$(which chromium)
@@ -31,10 +24,6 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd -t d ."
 export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
 export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
-# export FZF_DEFAULT_COMMAND='rg --files --hidden'
-# export FZF_DEFAULT_OPTS='--preview "bat --style=numbers --color=always {}"'
-# export FZF_DEFAULT_OPTS='--style=numbers --color=always {}"'
-# export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # Scala
 export PATH="$PATH:/home/arinal/.local/share/coursier/bin"

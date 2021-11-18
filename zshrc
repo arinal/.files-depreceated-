@@ -1,14 +1,28 @@
+MOUSE='
+              /   \                  /      \
+             |      \              /          \
+            |       |█o          o|            |
+            \    \  |███o______o██|   /        |
+             `\   \\███████████████\//        /
+               \ _o\████████████████//. ___ /
+                 ███████████████████████o.
+                ███* `███████████*  `█████
+                ██.   █████████|    .█████ o
+                `███⣿⣿█████████⣿⣿⣿⣿█████████o
+              .██⣿⣿████████████████████⣿███████o
+             ██████⣿████████████████⣿████████████o
+            ████████⣿⣿_.███████████⣿⣿_█████████████
+           █████⣿████o`(____)/.███████████████████
+           █████ ██⣿⣿⣿/⣿⣿||⣿⣿\⣿⣿⣿⣿⣿⣿██████████████
+           █████ █⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ██████'
+
+
 echo "\n"
 figlet -f 3d "Don't use" | lolcat
+# figlet -f Bloody "mouse" | lolcat
+echo $MOUSE | lolcat
 echo "\n"
-figlet -f Bloody "mouse" | lolcat
 
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-# fi
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
@@ -30,12 +44,12 @@ zinit light-mode for \
     zdharma-continuum/zinit-annex-bin-gem-node \
     zdharma-continuum/zinit-annex-patch-dl \
     zdharma-continuum/zinit-annex-rust
-
 ### End of Zinit's installer chunk
 
 zinit snippet PZT::modules/environment/init.zsh
 zinit snippet PZT::modules/history/init.zsh
 zinit snippet PZT::modules/utility/init.zsh
+zinit snippet PZT::modules/completion/init.zsh
 zinit snippet PZT::modules/fasd/init.zsh
 zstyle ':prezto:module:editor' dot-expansion 'yes'
 zstyle ':prezto:module:editor' key-bindings 'vi'
@@ -61,6 +75,11 @@ zinit ice atclone"dircolors -b src/dir_colors > c.zsh" \
             pick"c.zsh" \
             nocompile'!'
 zinit light arcticicestudio/nord-dircolors
+
+# BASE16_THEME=brewer
+BASE16_THEME=horizon-dark
+# BASE16_THEME=black-metal-venom
+# BASE16_THEME=apathy
 zinit ice atload"base16_${BASE16_THEME}"
 zinit light "chriskempson/base16-shell"
 zinit ice lucid wait'0' \
@@ -103,10 +122,13 @@ alias awsall="_awsListProfile"
 alias awxp="_awsSwitchProfile"
 alias awsp="_awsSetProfile"
 alias awswho="aws configure list"
-# Remove mode switching delay.
-KEYTIMEOUT=5
 
-# Change cursor shape for different vi modes.
+autoload -U +X bashcompinit && bashcompinit
+autoload -U +X compinit && compinit
+complete -C aws_completer aws
+
+# Vim cursor
+KEYTIMEOUT=5
 function zle-keymap-select {
     if [[ ${KEYMAP} == vicmd ]] ||
            [[ $1 = 'block' ]]; then
@@ -144,109 +166,3 @@ bindkey '^f' pet-select
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# zinit snippet PZT::modules/gnu-utility/init.zsh
-# zstyle ':prezto:module:utility' safe-ops 'no'
-# zinit ice wait'1' lucid; zinit snippet PZT::modules/directory/init.zsh
-# zinit snippet PZT::modules/completion/init.zsh
-# zinit snippet PZT::modules/osx/init.zsh
-# zinit snippet PZT::modules/gpg/init.zsh
-# zstyle ':prezto:module:editor' ps-context 'yes'
-# zstyle ':prezto:module:prompt' managed 'yes'
-# zinit snippet PZT::modules/editor/init.zsh
-# zinit load "jreese/zsh-titles"
-# zstyle ':prezto:module:terminal' auto-title 'yes'
-# zinit snippet PZT::modules/terminal/init.zsh
-
-# zinit ice lucid atload"unalias gcd"
-# zinit snippet OMZ::plugins/git/git.plugin.zsh
-
-# zinit ice wait'0' lucid; zinit light "akarzim/zsh-docker-aliases"
-# zinit ice wait'1' as"completion" lucid
-# zinit snippet https://github.com/docker/cli/blob/master/contrib/completion/zsh/_docker
-# zinit ice wait'1' as"completion" lucid
-# zinit snippet https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/terraform/_terraform
-
-# zinit ice depth'1'; zinit light denysdovhan/spaceship-prompt
-# zinit ice lucid from"gh-r" \
-#   as"command" pick"starship" \
-#   atload"!eval \$(starship init zsh)"
-# zinit light starship/starship
-
-# zinit ice wait'0' lucid atload"unalias d"; zinit snippet OMZ::plugins/fasd/fasd.plugin.zsh
-
-# zinit ice wait"0" lucid; zinit load zdharma-continuum/history-search-multi-word
-# zinit light zsh-users/zsh-history-substring-search
-#   zmodload zsh/terminfo
-#   [ -n "${terminfo[kcuu1]}" ] && bindkey "${terminfo[kcuu1]}" history-substring-search-up
-#   [ -n "${terminfo[kcud1]}" ] && bindkey "${terminfo[kcud1]}" history-substring-search-down
-#   bindkey -M emacs '^P' history-substring-search-up
-#   bindkey -M emacs '^N' history-substring-search-down
-#   bindkey -M vicmd 'k' history-substring-search-up
-#   bindkey -M vicmd 'j' history-substring-search-down
-
-# Python {{{
-# zinit ice lucid wait'1' atinit"local ZSH_PYENV_LAZY_VIRTUALENV=true" \
-#   atload"pyenv virtualenvwrapper_lazy"
-# zinit light davidparsson/zsh-pyenv-lazy
-# zinit ice svn wait'2' silent; zinit snippet OMZ::plugins/pyenv
-# }}}
-
-
-# Programs {{{
-# zinit ice as"program" make'!' \
-#             atclone'./direnv hook zsh > zhook.zsh' \
-#             atpull'%atclone' src"zhook.zsh"
-# zinit light direnv/direnv
-
-# zinit ice from"gh-r" as"program" bpick"krew.tar.gz" \
-#             mv"krew-darwin_amd64 -> krew" pick"krew" \
-#             atclone"rm -f krew-* && ./krew install krew && ./krew update" \
-#             atpull"%atclone" has"kubectl"
-# zinit light kubernetes-sigs/krew
-# zinit ice wait'0' lucid; zinit snippet OMZ::plugins/kubectl/kubectl.plugin.zsh
-# }}}
-
-# zinit ice wait"0" lucid if'[[ ! $TERM =~ ".*kitty" ]]'; zinit light marzocchi/zsh-notify
-
-# Spaceship prompt {{{
-# SPACESHIP_PROMPT_SEPARATE_LINE=false
-# SPACESHIP_PROMPT_ORDER=(
-#   dir
-#   host
-#   vi_mode
-#   jobs
-#   char
-# )
-# SPACESHIP_RPROMPT_ORDER=(
-#   terraform
-#   kubectl_context
-#   aws
-#   venv
-#   git
-#   exit_code
-# )
-# SPACESHIP_PROMPT_ADD_NEWLINE=false
-# SPACESHIP_CHAR_SYMBOL='❯ '
-# SPACESHIP_VI_MODE_SUFFIX='❯'
-# SPACESHIP_VI_MODE_INSERT='❯'
-# SPACESHIP_VI_MODE_NORMAL='❮'
-# SPACESHIP_VI_MODE_COLOR='magenta'
-# SPACESHIP_AWS_SHOW=false
-# SPACESHIP_AWS_SYMBOL='☁  '
-# SPACESHIP_DIR_TRUNC_REPO=false
-# SPACESHIP_KUBECONTEXT_SHOW=false
-# SPACESHIP_KUBECONTEXT_SYMBOL='⎈  '
-# SPACESHIP_PYENV_SHOW=false
-# SPACESHIP_EXIT_CODE_SHOW=true
-# SPACESHIP_EXIT_CODE_SYMBOL='✘ '
-# SPACESHIP_GIT_STATUS_PREFIX=' '
-# SPACESHIP_GIT_STATUS_SUFFIX=''
-# SPACESHIP_GIT_STATUS_COLOR='magenta'
-# SPACESHIP_TERRAFORM_SYMBOL=' '
-# # }}}
-
-# export HOMEBREW_NO_ANALYTICS=1
-# export KEYTIMEOUT=1
-# . $(brew --prefix asdf)/asdf.sh
-
