@@ -51,6 +51,7 @@ linters.setup({
 
 lvim.plugins = {
 	-- themes
+	"EdenEast/nightfox.nvim",
 	"lunarvim/colorschemes",
 	"folke/tokyonight.nvim",
 	{ "ellisonleao/gruvbox.nvim", requires = { "rktjmp/lush.nvim" } },
@@ -77,14 +78,22 @@ lvim.plugins = {
 	"tpope/vim-repeat",
 	"ChristianChiarulli/nvim-ts-rainbow",
 	{ "tpope/vim-surround", keys = { "c", "d", "y" } },
-	-- "unblevable/quick-scope",
+	"unblevable/quick-scope",
 	{
 		"karb94/neoscroll.nvim",
 		config = function()
 			require("user.neoscroll").config()
 		end,
 	},
-	{ "ggandor/lightspeed.nvim", event = "BufRead" },
+	{
+		"ggandor/lightspeed.nvim",
+		event = "BufRead",
+		config = function()
+			local mod = require("lightspeed")
+			mod.opts.instant_repeat_fwd_key = ";"
+			mod.opts.instant_repeat_bwd_key = ","
+		end,
+	},
 	{
 		"sindrets/diffview.nvim",
 		event = "BufRead",
@@ -113,6 +122,7 @@ lvim.plugins = {
 	--   run = "./install.sh",
 	--   requires = "hrsh7th/nvim-cmp",
 	-- },
+	"mattn/emmet-vim",
 	"untitled-ai/jupyter_ascending.vim",
 	-- { "folke/trouble.nvim", cmd = "TroubleToggle" },
 	{
@@ -125,7 +135,7 @@ lvim.plugins = {
 	"rcarriga/nvim-dap-ui",
 	"theHamsta/nvim-dap-virtual-text",
 	-- Language
-  "ChristianChiarulli/vim-solidity",
+	"ChristianChiarulli/vim-solidity",
 	{
 		"scalameta/nvim-metals",
 		config = function()

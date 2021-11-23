@@ -3,17 +3,14 @@ Typical desktop session when i3 + polybar + alacritty + neovim + tmux are being 
 ![Imgur](https://i.imgur.com/zfCWhj5.png)
 
 ## Apps & tools
+- [alacritty](https://github.com/jwilm/alacritty)
 - [zsh](https://www.zsh.org/)
 - [zinit](https://github.com/zdharma-continuum/zinit)
 - [tmux](https://github.com/tmux/tmux/wiki)
 - [ranger](https://github.com/ranger/ranger)
-- [neovim](https://github.com/neovim/neovim)
+- [NeoVim](https://github.com/neovim/neovim)
 - [LunarVim](https://www.lunarvim.org)
-- [vimium](https://github.com/philc/vimium)
-
-## For macOS
-- [iTerm2-Color-Schemes](https://github.com/mbadolato/iTerm2-Color-Schemes)
-- [hammerspoon](http://www.hammerspoon.org/)
+- [Vimium](https://github.com/philc/vimium)
 
 ## Linux
 i3 Window Manager
@@ -21,8 +18,6 @@ i3 Window Manager
 - [rofi](https://github.com/DaveDavenport/rofi)
 - [polybar](https://github.com/jaagr/polybar)
 
-Image preview for ranger
-- [w3m](http://w3m.sourceforge.net)
-
-Terminal emulator
-- [alacritty](https://github.com/jwilm/alacritty)
+## Fun
+- [colorscripts](https://github.com/nxzthelinuxguy/colorscripts)
+- [pokemon-colorscripts](https://gitlab.com/phoneybadger/pokemon-colorscripts)
