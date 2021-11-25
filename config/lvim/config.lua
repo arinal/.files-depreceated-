@@ -1,3 +1,30 @@
+-- Dashboard
+lvim.builtin.dashboard.custom_header = {
+	" ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗",
+	" ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║",
+	" ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║",
+	" ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║",
+	" ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║",
+	" ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝",
+	"",
+	"              ⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣠⣤⣤⣴⣦⣤⣤⣄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ",
+	"              ⠀⠀⠀⠀⠀⠀⢀⣤⣾⣿⣿⣿⣿⠿⠿⠿⠿⣿⣿⣿⣿⣶⣤⡀⠀⠀⠀⠀⠀⠀ ",
+	"              ⠀⠀⠀⠀⣠⣾⣿⣿⡿⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⢿⣿⣿⣶⡀⠀⠀⠀⠀ ",
+	"              ⠀⠀⠀⣴⣿⣿⠟⠁⠀⠀⠀⣶⣶⣶⣶⡆⠀⠀⠀⠀⠀⠀⠈⠻⣿⣿⣦⠀⠀⠀ ",
+	"              ⠀⠀⣼⣿⣿⠋⠀⠀⠀⠀⠀⠛⠛⢻⣿⣿⡀⠀⠀⠀⠀⠀⠀⠀⠙⣿⣿⣧⠀⠀ ",
+	"              ⠀⢸⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⣿⣷⠀⠀⠀⠀⠀⠀⠀⠀⠸⣿⣿⡇⠀ ",
+	"              ⠀⣿⣿⡿⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⣇⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⠀ ",
+	"              ⠀⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⡟⢹⣿⣿⡆⠀⠀⠀⠀⠀⠀⠀⣹⣿⣿⠀ ",
+	"              ⠀⣿⣿⣷⠀⠀⠀⠀⠀⠀⣰⣿⣿⠏⠀⠀⢻⣿⣿⡄⠀⠀⠀⠀⠀⠀⣿⣿⡿⠀ ",
+	"              ⠀⢸⣿⣿⡆⠀⠀⠀⠀⣴⣿⡿⠃⠀⠀⠀⠈⢿⣿⣷⣤⣤⡆⠀⠀⣰⣿⣿⠇⠀ ",
+	"              ⠀⠀⢻⣿⣿⣄⠀⠀⠾⠿⠿⠁⠀⠀⠀⠀⠀⠘⣿⣿⡿⠿⠛⠀⣰⣿⣿⡟⠀⠀ ",
+	"              ⠀⠀⠀⠻⣿⣿⣧⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⣿⠏⠀⠀⠀ ",
+	"              ⠀⠀⠀⠀⠈⠻⣿⣿⣷⣤⣄⡀⠀⠀⠀⠀⠀⠀⢀⣠⣴⣾⣿⣿⠟⠁⠀⠀⠀⠀ ",
+	"              ⠀⠀⠀⠀⠀⠀⠈⠛⠿⣿⣿⣿⣿⣿⣶⣶⣿⣿⣿⣿⣿⠿⠋⠁⠀⠀⠀⠀⠀⠀ ",
+	"              ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠛⠛⠛⠛⠛⠛⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ",
+}
+lvim.builtin.dashboard.active = true
+
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = false
@@ -10,14 +37,17 @@ vim.opt_global.shortmess:remove("F")
 
 lvim.leader = "space"
 lvim.builtin.which_key.mappings["sH"] = { "<cmd>Telescope command_history<cr>", "Command history" }
+lvim.builtin.which_key.mappings["aa"] = { ":.!figlet -f 3d<cr>", "Heading 1" }
+lvim.builtin.which_key.mappings["as"] = { ":.!toilet -w 200 -f standard<cr>", "Heading 2" }
+lvim.builtin.which_key.mappings["ad"] = { ":.!toilet -w 200 -f small<cr>", "Heading 3" }
+lvim.builtin.which_key.mappings["ab"] = { ":.!toilet -w 200 -f term -F border<cr>", "Boxify" }
+lvim.colorscheme = 'nightfox'
 
-lvim.builtin.dashboard.active = false
 lvim.builtin.terminal.active = false
 lvim.builtin.nvimtree.show_icons.git = 0
 lvim.builtin.bufferline.active = true
 lvim.builtin.dap.active = true
 
--- lvim.builtin.lualine.options.theme = "horizontal"
 require("user.lualine").config()
 
 lvim.builtin.treesitter.ensure_installed = "maintained"
@@ -51,6 +81,8 @@ linters.setup({
 
 lvim.plugins = {
 	-- themes
+	"sainnhe/sonokai",
+	"sainnhe/everforest",
 	"EdenEast/nightfox.nvim",
 	"lunarvim/colorschemes",
 	"folke/tokyonight.nvim",
@@ -101,7 +133,7 @@ lvim.plugins = {
 	"christoomey/vim-tmux-navigator",
 	"oberblastmeister/neuron.nvim",
 
-	-- "github/copilot.vim",
+	-- "github/copilot.vim", uncomment when neovim 0.6 is stable
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		-- event = "BufReadPre",

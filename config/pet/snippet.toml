@@ -221,11 +221,6 @@
   output = ""
 
 [[snippets]]
-  description = "Edit zpreztorc configuration"
-  command = "e /home/arinal/.files/zprezto/runcoms/zpreztorc"
-  output = ""
-
-[[snippets]]
   description = "View pull request of current branch on Github website"
   command = "gh pr view --web"
   tag = ["github", "web", "pr", "branch", "view"]

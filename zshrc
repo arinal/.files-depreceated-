@@ -45,8 +45,6 @@ zinit light-mode for \
     zdharma-continuum/zinit-annex-rust
 ### End of Zinit's installer chunk
 
-zstyle ':prezto:module:editor' key-bindings 'vi'
-zstyle ':prezto:module:editor' dot-expansion 'yes'
 zinit snippet PZT::modules/environment/init.zsh
 zinit snippet PZT::modules/history/init.zsh
 zinit snippet PZT::modules/utility/init.zsh
@@ -98,6 +96,7 @@ alias tm='tmux'
 alias em='emacs -nw'
 alias emc='emacsclient -nw'
 alias e.='e .'
+alias qi=quite-intriguing
 alias f=ranger
 
 source awsp_functions.sh
@@ -107,6 +106,7 @@ alias awsp="_awsSetProfile"
 alias awswho="aws configure list"
 
 ## Vi mode
+bindkey -v
 # KEYTIMEOUT=5
 function zle-keymap-select {
   if [[ ${KEYMAP} == vicmd ]] || [[ $1 = 'block' ]]; then

@@ -1,7 +1,3 @@
-if [[ "$OSTYPE" == darwin* ]]; then
-  export BROWSER='open'
-fi
-
 export EDITOR=lvim
 export VISUAL=lvim
 export PAGER=bat
