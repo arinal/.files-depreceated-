@@ -50,20 +50,21 @@ zinit snippet PZT::modules/history/init.zsh
 zinit snippet PZT::modules/utility/init.zsh
 zinit snippet PZT::modules/completion/init.zsh
 zinit snippet PZT::modules/fasd/init.zsh
+bindkey -v
 
 zinit ice lucid wait"0" atclone"sed -ie 's/fc -rl 1/fc -rli 1/' shell/key-bindings.zsh" \
   atpull"%atclone" multisrc"shell/{completion,key-bindings}.zsh" id-as junegunn/fzf_completions \
   pick"/dev/null"
 zinit light junegunn/fzf
 
+zinit light Aloxaf/fzf-tab
 zinit light mafredri/zsh-async
 zinit ice wait'0' blockf lucid; zinit light zsh-users/zsh-completions
 zinit ice lucid wait"1" lucid atload"!_zsh_autosuggest_start"; zinit load zsh-users/zsh-autosuggestions
 zinit ice from'gh-r' as'program'; zinit light sei40kr/fast-alias-tips-bin
 zinit light sei40kr/zsh-fast-alias-tips
-zinit ice wait"1" atinit"zpcompinit; zpcdreplay" lucid; zinit light zdharma-continuum/fast-syntax-highlighting
+zinit light zdharma-continuum/fast-syntax-highlighting
 zinit ice depth=1; zinit light romkatv/powerlevel10k
-zinit light Aloxaf/fzf-tab
 
 ## Colors
 BASE16_THEME=horizon-dark
@@ -77,13 +78,9 @@ zinit ice lucid wait'0' \
             pick"bash/base16-${BASE16_THEME}.config" nocompile'!'
 zinit light 'nicodebo/base16-fzf'
 
+# Set auto completions
 autoload -U +X bashcompinit && bashcompinit
-autoload -Uz compinit
-if [ $(date +'%j') != $(date -r ${ZDOTDIR:-$HOME}/.zcompdump +'%j') ]; then
-  compinit;
-else
-  compinit -C;
-fi
+autoload -Uz compinit && compinit
 complete -C aws_completer aws
 
 alias ls='lsd'
@@ -106,7 +103,6 @@ alias awsp="_awsSetProfile"
 alias awswho="aws configure list"
 
 ## Vi mode
-bindkey -v
 # KEYTIMEOUT=5
 function zle-keymap-select {
   if [[ ${KEYMAP} == vicmd ]] || [[ $1 = 'block' ]]; then
@@ -138,5 +134,5 @@ zle -N pet-select
 stty -ixon
 bindkey '^f' pet-select
 
-## p10k, to customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+# ## p10k, to customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
