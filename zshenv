@@ -2,7 +2,7 @@ export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive
 
 export PATH=~/.local/bin:~/local/bin:$PATH
 export TERMINAL=alacritty
-export BROWSER=$(which chromium)
+export BROWSER=firefox
 
 # rust
 export PATH=/home/arinal/.cargo/bin:$PATH
