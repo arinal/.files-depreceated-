@@ -12,11 +12,11 @@ export GOPATH=/home/arinal/sources/go/lib
 export PATH=$PATH:$GOPATH/bin
 
 # R
-export R_LIBS_USER=/home/arinal/sources/R/lib
+# export R_LIBS_USER=/home/arinal/sources/R/lib
 
 # Flutter
-export PATH=$PATH:/home/arinal/sources/flutter/flutter.git/bin:/home/arinal/sources/flutter/flutter.git/bin/cache/dart-sdk/bin
-export ANDROID_SDK_ROOT=/home/arinal/apps/Android/Sdk
+# export PATH=$PATH:/home/arinal/sources/flutter/flutter.git/bin:/home/arinal/sources/flutter/flutter.git/bin/cache/dart-sdk/bin
+# export ANDROID_SDK_ROOT=/home/arinal/apps/Android/Sdk
 
 # FZF
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*" 2> /dev/null'
@@ -30,7 +30,7 @@ export PATH="$PATH:/home/arinal/.local/share/coursier/bin"
 export SPARK_HOME=/home/arinal/apps/spark-3.0.0-preview2-bin-hadoop2.7
 
 # ruby
-export PATH=$PATH:/home/arinal/.gem/ruby/2.7.0/bin
+# export PATH=$PATH:/home/arinal/.gem/ruby/2.7.0/bin
 
 # npm
 export NPM_CONFIG_PREFIX=~/.npm-global
@@ -43,3 +43,19 @@ export NIX_PATH=$HOME/.nix-defexpr/channels${NIX_PATH:+:}$NIX_PATH
 if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/arinal/apps/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/arinal/apps/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/arinal/apps/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/arinal/apps/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+

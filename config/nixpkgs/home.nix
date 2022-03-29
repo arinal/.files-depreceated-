@@ -29,7 +29,7 @@
     pkgs.stress
     pkgs.w3m
     pkgs.ncdu
-    pkgs.neuron-notes
+    # pkgs.neuron-notes
     pkgs.tmux
 
     # language 
@@ -69,12 +69,4 @@
           };
     in
       [ java-overlay ];
-
-  # programs.bat = {
-  #   enable = true;
-  #   config = {
-  #     theme = "GitHub";
-  #     italic-text = "always";
-  # };
-  # };
 }
