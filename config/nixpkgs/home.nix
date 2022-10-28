@@ -44,7 +44,7 @@
     pkgs.scala
     pkgs.sbt
     pkgs.ammonite
-    pkgs.coursier
+    # pkgs.coursier
 
     pkgs.feh
     # pkgs.rust

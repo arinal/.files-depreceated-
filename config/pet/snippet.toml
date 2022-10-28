@@ -231,3 +231,87 @@
   command = "e ~/.p10k.zsh"
   tag = ["prompt", "unicode", "powerline", "command", "powerlevel10k"]
   output = ""
+
+[[snippets]]
+  description = "View github repository on browser"
+  command = "gh repo view --web"
+  tag = ["git", "README.md", "github", "gh", "browser"]
+  output = ""
+
+[[snippets]]
+  description = "Install node packages using npm and write to package.json"
+  command = "npm install --save-dev <packages>"
+  tag = ["npm", "package.json", "--save-dev", "js", "ts", "node"]
+  output = ""
+
+[[snippets]]
+  description = "Install package(s) from pacman"
+  command = "sudo pacman --sync <name>"
+  tag = ["install", "arch", "package", "pacman", "paci"]
+  output = ""
+
+[[snippets]]
+  description = "Update archlinux system with pacman"
+  command = "sudo pacman --sync --refresh --sysupgrade"
+  tag = ["system", "update", "kernel", "version", "install", "arch", "package", "pacman", "pacU"]
+  output = ""
+
+[[snippets]]
+  description = "Open Zoom meeting for daily standup"
+  command = "firefox --new-window \"https://disney.zoom.us/j/6306028504?pwd=QmF4TDIrOEtoR2M1UmtWZ0FxREJRUT09\""
+  tag = ["zoom", "sarah", "daily", "standup", "meeting", "scrum"]
+  output = ""
+
+[[snippets]]
+  description = "Uninstall a package using pacman"
+  command = "sudo pacman --remove --recursive <name>"
+  tag = ["uninstall", "arch", "package", "pacman", "remove", "delete", "pacx"]
+  output = ""
+
+[[snippets]]
+  description = "Neuron start neuron web site in 8080"
+  command = "neuron gen -wS -d /home/arinal/neuron"
+  tag = ["zettelkasten", "website", "http", "document", "neuron", "localhost", "pacx"]
+  output = ""
+
+[[snippets]]
+  description = "Get ssm NON_HULUSOLD_API_KEY parameter from AWS"
+  command = "aws ssm get-parameters --names /mercury/<env=dev>/subscription-func-test/NON_HULUSOLD_API_KEY --with-decryption"
+  tag = ["aws", "ssm", "hulu", "api", "key", "decrypt"]
+  output = ""
+
+[[snippets]]
+  description = "File size analyzer"
+  command = "ncdu"
+  tag = ["disk", "analyze", "space", "giga", "bytes", "current", "folder"]
+  output = ""
+
+[[snippets]]
+  description = "Compile wat to wasm"
+  command = "wat2wasm <name>.wat -o <name>.wasm"
+  tag = ["wat", "wasm", "binary", "compile"]
+  output = ""
+
+[[snippets]]
+  description = "Analyze wasm binary object"
+  command = "wasm-objdump -x <name>.wasm"
+  tag = ["wat", "wasm", "objdump", "binary"]
+  output = ""
+
+[[snippets]]
+  description = "Host a static python web server in local directory"
+  command = "python -m http.server"
+  tag = ["python", "file", "server", "http", "directory"]
+  output = ""
+
+[[snippets]]
+  description = "Edit alacritty config"
+  command = "e /home/arinal/.files/config/alacritty/alacritty.yml "
+  tag = ["alacritty", "config", "edit", "vim"]
+  output = ""
+
+[[snippets]]
+  description = "Get json bitcoin transaction"
+  command = "http https://blockchain.info/tx/<address>?format=json | jless"
+  tag = ["btc", "json", "transaction", "crypto", "blockchain"]
+  output = ""
