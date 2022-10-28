@@ -1,6 +1,6 @@
 # .files
 Typical desktop session when i3 + polybar + alacritty + neovim + tmux are being used at once.
-![Imgur](https://i.imgur.com/zfCWhj5.png)
+![Imgur](https://imgur.com/JslD9Sl)
 
 ## Apps & tools
 - [alacritty](https://github.com/jwilm/alacritty)
@@ -13,7 +13,6 @@ Typical desktop session when i3 + polybar + alacritty + neovim + tmux are being 
 - [Vimium](https://github.com/philc/vimium)
 
 ## Linux
-i3 Window Manager
 - [i3wm](https://github.com/i3/i3)
 - [rofi](https://github.com/DaveDavenport/rofi)
 - [polybar](https://github.com/jaagr/polybar)
