@@ -13,7 +13,7 @@ color:
   theme: custom
 
 # date: '+%A, %d %B %Y, %R'
-date: '%d %B %Y, %R'
+date: '+%d %b %Y, %R'
 
 # == Dereference ==
 # Whether to dereference symbolic links.
