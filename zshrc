@@ -50,14 +50,13 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 ## Colors
 # BASE16_THEME=horizon-dark
 # BASE16_THEME=black-metal-immortal
-BASE16_THEME=black-metal-immortal
 
-zinit ice atload"base16_${BASE16_THEME}"
-zinit light "chriskempson/base16-shell"
-zinit ice lucid wait'0' \
-            src"bash/base16-${BASE16_THEME}.config" \
-            pick"bash/base16-${BASE16_THEME}.config" nocompile'!'
-zinit light 'nicodebo/base16-fzf'
+# zinit ice atload"base16_${BASE16_THEME}"
+# zinit light "chriskempson/base16-shell"
+# zinit ice lucid wait'0' \
+#             src"bash/base16-${BASE16_THEME}.config" \
+#             pick"bash/base16-${BASE16_THEME}.config" nocompile'!'
+# zinit light 'nicodebo/base16-fzf'
 
 ## Set AWS auto completions
 # autoload -U +X bashcompinit && bashcompinit
@@ -72,13 +71,18 @@ alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
 alias tm='tmux'
-alias em='emacs -nw'
-alias emc='emacsclient -nw'
 alias e.='e .'
+alias ee='neovide'
 alias qi=quite-intriguing
 alias f=ranger
 alias ldr=lazydocker
 alias g=lazygit
+alias jy='convfmt -f json -t yaml'
+
+alias gs='gh copilot suggest -t shell'
+alias gsg='gh copilot suggest -t git'
+alias gsh='gh copilot suggest -t gh'
+alias ge='gh copilot explain'
 
 source awsp_functions.sh
 alias awsall="_awsListProfile"
@@ -91,6 +95,7 @@ autoload -U edit-command-line
 zle -N edit-command-line
 bindkey '^v' edit-command-line
 bindkey -M vicmd '^v' edit-command-line
+bindkey jk vi-cmd-mode
 
 ## Vi mode
 # KEYTIMEOUT=5

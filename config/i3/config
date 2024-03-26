@@ -99,7 +99,8 @@ bindsym $mod+b workspace back_and_forth
 bindsym $mod+n workspace next
 bindsym $mod+p workspace prev
 
-bindsym $mod+Return exec i3-sensible-terminal
+# bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec wezterm
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
@@ -158,6 +159,7 @@ bindsym $mod+Shift+x exec i3lock-fancy
 
 exec --no-startup-id i3lock-fancy
 exec_always --no-startup-id xautolock -time 20 -locker i3lock-fancy
-exec_always --no-startup-id picom --experimental-backends
+# exec_always --no-startup-id picom --experimental-backends
+exec_always --no-startup-id picom
 exec_always --no-startup-id ~/.config/i3/wallcron.sh 400
 exec_always --no-startup-id ~/.config/polybar/launch.sh
