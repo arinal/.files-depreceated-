@@ -1,6 +1,6 @@
 [General]
   snippetfile = "/home/arinal/.config/pet/snippet.toml"
-  editor = "lvim"
+  editor = "nvim"
   column = 40
   selectcmd = "fzf"
   backend = "gist"
