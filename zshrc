@@ -51,7 +51,7 @@ alias lla='ls -la'
 alias lt='ls --tree'
 alias tm='tmux'
 alias e.='e .'
-alias ee='neovide'
+# alias ee='neovide'
 alias qi=quite-intriguing
 alias f=ranger
 alias ldr=lazydocker
@@ -92,6 +92,17 @@ zle -N zle-keymap-select
 echo -ne '\e[5 q'
 preexec() {
   echo -ne '\e[5 q'
+}
+
+## neovide
+function ee() {
+  NVIM_SOCKET=/tmp/neovide.socket
+  file=$(pwd)/$@
+  if [ ! -S $NVIM_SOCKET ]; then
+      neovide --no-idle  -- --listen $NVIM_SOCKET $file
+  else
+      nvim --server $NVIM_SOCKET --remote $file
+  fi
 }
 
 ## Pet snippet

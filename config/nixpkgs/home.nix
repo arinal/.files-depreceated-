@@ -7,46 +7,46 @@
   home.stateVersion = "21.11";
 
   home.packages = [
-    pkgs.bat
-    pkgs.tldr
-    pkgs.fasd
-    pkgs.ripgrep
-    pkgs.lsd
-    pkgs.jq
-    pkgs.jc
-    pkgs.yq
-    pkgs.fzf
+    # pkgs.bat
+    # pkgs.tldr
+    # pkgs.fasd
+    # pkgs.ripgrep
+    # pkgs.lsd
+    # pkgs.jq
+    # pkgs.jc
+    # pkgs.yq
+    # pkgs.fzf
     pkgs.pet
 
-    pkgs.cmatrix
-    pkgs.neofetch
-    pkgs.figlet
-    pkgs.lolcat
+    # pkgs.cmatrix
+    # pkgs.neofetch
+    # pkgs.figlet
+    # pkgs.lolcat
 
-    pkgs.gh
-    pkgs.lazygit
-    pkgs.lazydocker
-    pkgs.stress
-    pkgs.w3m
-    pkgs.ncdu
+    # pkgs.gh
+    # pkgs.lazygit
+    # pkgs.lazydocker
+    # pkgs.stress
+    # pkgs.w3m
+    # pkgs.ncdu
     # pkgs.neuron-notes
-    pkgs.tmux
+    # pkgs.tmux
 
     # language 
-    pkgs.nasm
-    pkgs.go_1_17
+    # pkgs.nasm
+    # pkgs.go_1_17
 
     # jvm based
     pkgs.jdk
-    pkgs.gradle
-    pkgs.maven
-    pkgs.groovy
-    pkgs.scala
-    pkgs.sbt
-    pkgs.ammonite
+    # pkgs.gradle
+    # pkgs.maven
+    # pkgs.groovy
+    # pkgs.scala
+    # pkgs.sbt
+    # pkgs.ammonite
     # pkgs.coursier
 
-    pkgs.feh
+    # pkgs.feh
     # pkgs.rust
     # pkgs.ranger
     # pkgs.bash
