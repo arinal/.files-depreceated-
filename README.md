@@ -1,4 +1,7 @@
 # .files
+
+Depreceated, now I'm using [dotfiles](https://github.com/arinal/dotfiles) which uses Hyprland.
+
 Typical desktop session when i3 + polybar + alacritty + neovim + tmux are being used at once.
 ![Imgur](https://imgur.com/JslD9Sl.png)
 
